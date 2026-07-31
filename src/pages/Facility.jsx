@@ -11,9 +11,9 @@ import {
   FiShield,
   FiLayers
 } from 'react-icons/fi';
+import SectionHeading from '../components/common/SectionHeading';
 
 import chilliExportCta from '../assets/chilli-export-cta.png';
-import facilityHeroBg from '../assets/facility-hero.png';
 import market from '../assets/market-image.png';
 import facilityTool from '../assets/facility-tool.png';
 import useStageProgress from '../hooks/useStageProgress';
@@ -21,11 +21,6 @@ import useStageProgress from '../hooks/useStageProgress';
 const Facility = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const imgRef = useRef(null);
-
-  // Interactive 4-stage workflow timeline — driven by scroll position.
-  // The fill traces down the line to a "playhead" at the middle of the viewport;
-  // each node lights up (and glows) as the playhead passes it. Clicking a node
-  // smooth-scrolls it to the playhead.
   const flow = useStageProgress(4, { autoPlay: false });
   const { goToStage } = flow; // stable reference (memoized) for the scroll effect
   const lineRef = useRef(null);
@@ -164,20 +159,24 @@ const Facility = () => {
             transition={{ duration: 0.6 }}
             className="text-left space-y-6"
           >
-            <div>
-              <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#2c6a46] bg-[#2c6a46]/10 px-3 py-1 rounded-sm uppercase inline-block mb-3">
-                World-Class Operations
-              </span>
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-                Precision Engineering for Agricultural Excellence
-              </h2>
-            </div>
+            <SectionHeading
+              align="left"
+              kicker="Our facilities"
+              title={
+                <>
+                  Precision engineering for <span className="text-[#8f000d]">agricultural excellence</span>
+                </>
+              }
+              className="mb-4"
+              showLeftLine={true}
+              showRightLine={false}
+            />
 
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6]">
-              At Minha Imports & Exports, our facilities represent the pinnacle of "Seed-to-Shipment" logistics. We have invested in state-of-the-art infrastructure that integrates cold chain management, automated sorting, and multi-tier quality control labs to ensure every shipment meets the stringent standards of the international market.
+              At Minha Imports & Exports, our modern facilities are designed to ensure quality at every stage. From sourcing fresh chillies to processing, packaging, and shipping, every step is carried out with care and attention to detail.
             </p>
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6]">
-              Our operational capabilities are built around a central philosophy: transparency. From the moment the chillies arrive from the farms to the final dispatch, every step is documented and performed under strict hygienic conditions.
+              We follow strict hygiene and quality standards throughout the process. Every batch is carefully handled, inspected, and documented to ensure safe, reliable, and consistent products for customers around the world.
             </p>
 
             <div className="pt-2">
@@ -201,10 +200,10 @@ const Facility = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute -inset-4 bg-[#cca72f]/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500" />
+            <div className="absolute -inset-4 bg-[#cca72f]/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
             <img
               alt="High-precision quality control equipment laboratory"
-              className="relative rounded-xl shadow-xl w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 hover:scale-[1.01]"
+              className="relative rounded-xl shadow-2xl w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 hover:scale-[1.01]"
               src={facilityTool}
             />
           </motion.div>
@@ -216,15 +215,17 @@ const Facility = () => {
       <section className="py-10 md:py-14 bg-surface relative overflow-hidden">
 
         {/* Header */}
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center mb-8 relative z-10">
-          <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">
-            Workflow Stages
-          </span>
-          <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-            Our 4-Stage Operational Process
-          </h2>
-          <div className="w-20 h-1 bg-[#8f000d] mx-auto mt-4 rounded-full"></div>
-        </div>
+        <SectionHeading
+          align="center"
+          kicker="Workflow stages"
+          title={
+            <>
+              Our four-stage <span className="text-[#8f000d]">operational process</span>
+            </>
+          }
+          className="mb-10 relative z-10"
+          showRightLine={true}
+        />
 
         {/* Timeline container */}
         <div className="relative max-w-[1100px] mx-auto px-6 md:px-12 pb-4 z-10">
@@ -286,7 +287,7 @@ const Facility = () => {
                   </h3>
                   <div className="w-12 h-[2.5px] bg-[#8f000d] rounded-full mt-3 mb-4"></div>
                   <p className="font-['Nunito'] text-[#5a403e] text-[14px] md:text-[15px] leading-relaxed mb-6">
-                    Our cleaning units utilize magnetic separators and air-suction systems to remove foreign particles, stones, and dust. The sorting process is managed by high-resolution optical sorters that categorize chillies based on color consistency and size uniformity, ensuring only the highest grade S4 and Teja varieties move forward.
+                    Every batch of chillies is carefully cleaned to remove dust and impurities. We use modern sorting technology to select chillies based on their size, color, and overall quality, ensuring only the best products move to the next stage.
                   </p>
 
                   {/* Phase Metrics */}
@@ -381,7 +382,7 @@ const Facility = () => {
                   </h3>
                   <div className="w-12 h-[2.5px] bg-[#2c6a46] rounded-full mt-3 mb-4"></div>
                   <p className="font-['Nunito'] text-[#5a403e] text-[14px] md:text-[15px] leading-relaxed mb-6">
-                    To prevent moisture damage and maintain the pungency (SHU levels) of our chillies, we operate a 50,000 sq. ft. storage facility. The environment is strictly monitored for humidity and temperature, with dedicated pallets that keep the product away from floor contact, ensuring 100% pest-free storage.
+                    Our chillies are stored in a clean, temperature-controlled warehouse to maintain their freshness, quality, and natural spice. The storage area is regularly monitored to keep the products safe and pest-free.
                   </p>
 
                   {/* Phase Metrics */}
@@ -442,7 +443,7 @@ const Facility = () => {
                   </h3>
                   <div className="w-12 h-[2.5px] bg-[#cca72f] rounded-full mt-3 mb-4"></div>
                   <p className="font-['Nunito'] text-[#5a403e] text-[14px] md:text-[15px] leading-relaxed mb-6">
-                    We provide customized packaging solutions tailored to international shipping requirements. From 5kg vacuum-sealed pouches to 25kg PP bags, our automated machinery ensures airtight seals and accurate weight measurement. Every package features clear batch-tracking QR codes for total traceability.
+                    We offer secure packaging options for different export needs. Every package is carefully sealed, accurately weighed, and labeled for easy tracking throughout the shipping process.
                   </p>
 
                   {/* Phase Metrics */}
@@ -537,7 +538,7 @@ const Facility = () => {
                   </h3>
                   <div className="w-12 h-[2.5px] bg-[#b22222] rounded-full mt-3 mb-4"></div>
                   <p className="font-['Nunito'] text-[#5a403e] text-[14px] md:text-[15px] leading-relaxed mb-6">
-                    Located near major transport hubs, our logistics arm ensures rapid transit from facility to port. We handle all container stuffing on-site under high surveillance, ensuring that the integrity of the packaging is maintained until the doors are sealed for global shipping.
+                    Our experienced logistics team ensures every shipment is packed, inspected, and dispatched safely. We manage the entire export process to deliver products on time to customers across the world.
                   </p>
 
                   {/* Phase Metrics */}
@@ -565,21 +566,17 @@ const Facility = () => {
       <section className="py-10 md:py-14 bg-surface">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">
-              Gallery
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Inside Our Operations
-            </h2>
-            <div className="w-20 h-1 bg-[#8f000d] mx-auto mt-4 rounded-full"></div>
-          </motion.div>
+          <SectionHeading
+            align="center"
+            kicker="Gallery"
+            title={
+              <>
+                Inside our <span className="text-[#8f000d]">operations</span>
+              </>
+            }
+            className="mb-10"
+            showRightLine={true}
+          />
 
           <motion.div
             variants={staggerContainer}
@@ -635,27 +632,26 @@ const Facility = () => {
       <section className="py-10 md:py-14 bg-surface-container-low">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-          {/* Centered Header */}
-          <div className="text-center mb-16 space-y-3">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase block">
-              Infrastructure
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Built for Quality &amp; Reliability
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] max-w-2xl mx-auto text-[15px] md:text-[16px] leading-[1.6]">
-              Our infrastructure isn't just about high-tech machines; it's about the promise of safety, consistency, and promptness we deliver to your doorstep.
-            </p>
-            <div className="w-16 h-[2.5px] bg-[#8f000d] mx-auto mt-4 rounded-full" />
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Infrastructure"
+            title={
+              <>
+                Built for quality and <span className="text-[#8f000d]">reliability</span>
+              </>
+            }
+            intro="Our infrastructure is built on more than just modern technology—it is built on trust. Every step, from processing to delivery, is designed to ensure quality, safety, and reliability in every shipment."
+            className="mb-16"
+            showRightLine={true}
+          />
 
           {/* Apple-Style Unified Grid Container */}
           <div className="bg-white rounded-[2rem] border-t border-l border-neutral-100 shadow-premium-soft overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 num: '01',
-                title: 'Food Safety Compliance',
-                desc: 'Our units are designed following global food safety protocols to ensure zero contamination.',
+                title: 'Strict Food Safety Standards',
+                desc: 'Every product is processed in a clean and hygienic environment to ensure safe, high-quality exports.',
                 iconObj: <FiCheckCircle className="text-xl" />,
                 color: 'text-[#8f000d]',
                 bg: 'bg-[#8f000d]/10',
@@ -663,8 +659,8 @@ const Facility = () => {
               },
               {
                 num: '02',
-                title: 'High-Throughput Yield',
-                desc: 'Capable of processing up to 50 metric tons of chilli per day without compromising quality.',
+                title: 'High Processing Capacity',
+                desc: 'Our modern facility can process up to 50 metric tons of chillies every day while maintaining consistent quality.',
                 iconObj: <FiCpu className="text-xl" />,
                 color: 'text-[#2c6a46]',
                 bg: 'bg-[#2c6a46]/10',
@@ -672,8 +668,8 @@ const Facility = () => {
               },
               {
                 num: '03',
-                title: 'Stock Availability',
-                desc: 'Large-scale storage ensures consistent supply even during off-peak seasons.',
+                title: 'Reliable Stock Availability',
+                desc: 'Large storage capacity helps us ensure a steady supply throughout the year.',
                 iconObj: <FiLayers className="text-xl" />,
                 color: 'text-[#cca72f]',
                 bg: 'bg-[#cca72f]/10',
@@ -681,8 +677,8 @@ const Facility = () => {
               },
               {
                 num: '04',
-                title: 'In-House Lab Testing',
-                desc: 'Immediate moisture and color testing in our on-site laboratory for every batch.',
+                title: 'In-House Quality Testing',
+                desc: 'Every batch is tested for quality, freshness, and consistency before it is shipped.',
                 iconObj: <FiAward className="text-xl" />,
                 color: 'text-[#d97706]',
                 bg: 'bg-[#d97706]/10',
@@ -691,7 +687,7 @@ const Facility = () => {
               {
                 num: '05',
                 title: 'Sustainable Practices',
-                desc: 'Energy-efficient machinery and waste management systems for a greener footprint.',
+                desc: 'We use efficient processes that reduce waste and support environmentally responsible production.',
                 iconObj: <FiGlobe className="text-xl" />,
                 color: 'text-[#0a361c]',
                 bg: 'bg-[#0a361c]/10',
@@ -699,8 +695,8 @@ const Facility = () => {
               },
               {
                 num: '06',
-                title: 'Secure Facility',
-                desc: '24/7 CCTV surveillance and restricted access zones for product security.',
+                title: 'Safe & Secure Facility',
+                desc: 'Our facility is monitored around the clock to ensure product safety and security at every stage.',
                 iconObj: <FiShield className="text-xl" />,
                 color: 'text-[#8f6a10]',
                 bg: 'bg-[#8f6a10]/10',
@@ -713,7 +709,7 @@ const Facility = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="p-8 md:p-10 border-b border-r border-neutral-100 flex flex-col justify-between min-h-[240px] relative group overflow-hidden text-left bg-white hover:bg-neutral-50 transition-colors duration-150"
+                className="p-8 md:p-10 border-b border-r border-neutral-100 flex flex-col justify-between min-h-[240px] relative group overflow-hidden text-left hover:bg-neutral-50 transition-colors duration-300"
               >
                 {/* Large Background Watermarked Number */}
                 <div className="absolute right-6 bottom-4 font-['urbanist'] font-extrabold text-[80px] leading-none text-neutral-100/60 select-none group-hover:text-neutral-200/50 transition-colors duration-300 pointer-events-none z-0">
@@ -763,34 +759,27 @@ const Facility = () => {
 
             {/* Left Column: Brand Quote (lg:col-span-5) */}
             <div className="relative space-y-4 text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8 xl:pr-12 lg:col-span-5 w-full z-10">
-              <span className="absolute -top-10 -left-2 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                “
-              </span>
-              <blockquote className="font-['urbanist'] font-medium italic text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 relative z-10">
-                "Behind every successful export is a strong infrastructure built for precision and consistency. Our facilities are carefully designed to maintain product quality, ensure hygienic handling, and support seamless global deliveries."
-              </blockquote>
-              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-[#cca72f] relative z-10">
-                — The Minha Infrastructure
+              <SectionHeading
+                align="left"
+                tone="light"
+                kicker="Our promise"
+                kickerColor="#cca72f"
+                intro="Behind every successful export is a strong infrastructure built for precision and consistency. Our facilities are carefully designed to maintain product quality, ensure hygienic handling, and support seamless global deliveries."
+                className="mb-0"
+                showLeftLine={true}
+                showRightLine={false}
+              />
+              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-white/40 relative z-10 mt-2">
+                — The Minha Infrastructure Team
               </div>
-              <span className="absolute -bottom-14 right-4 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                ”
-              </span>
             </div>
 
             {/* Right Column: CTA Content (lg:col-span-7) */}
             <div className="space-y-5 text-center lg:text-left lg:col-span-7 w-full">
 
-              {/* Tagline Badge */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto lg:mx-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#cca72f] animate-pulse" />
-                <span className="font-['urbanist'] font-bold text-[8.5px] tracking-[0.2em] text-[#cca72f] uppercase">
-                  Direct Export Cargo Sourcing
-                </span>
-              </div>
-
               {/* Title */}
-              <h2 className="font-['urbanist'] font-extrabold text-[22px] md:text-[30px] leading-tight text-white tracking-tight">
-                Partner With a Reliable Export Infrastructure
+              <h2 className="font-['urbanist'] font-bold text-[22px] sm:text-[26px] md:text-[32px] leading-[1.2] text-white tracking-tight">
+                Partner with a reliable export infrastructure
               </h2>
 
               {/* Description */}
@@ -804,9 +793,10 @@ const Facility = () => {
                   href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20bulk%20Guntur%20chilli%20export.%20Please%20share%20pricing%2C%20packaging%20options%2C%20and%20shipping%20timelines."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#cca72f] text-[#140002] px-8 py-3.5 rounded-full font-['urbanist'] font-extrabold text-[12px] uppercase tracking-wider hover:bg-[#e0bc55] shadow-lg shadow-[#cca72f]/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#8f000d] font-['urbanist'] font-extrabold text-[13px] py-3.5 px-7 rounded-lg uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 group whitespace-nowrap cursor-pointer"
                 >
                   Request a Quote
+                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
 

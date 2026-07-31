@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FiCheckCircle, FiMapPin, FiDroplet, FiAward, FiTag } from 'react-icons/fi';
 import { GiChiliPepper } from 'react-icons/gi';
 import { chilliVarieties } from '../config/chilliData';
+import SectionHeading from '../components/common/SectionHeading';
 
 // Import local assets for gallery fallback
 import chilliIntroDry from '../assets/chilli-intro-dry.png';
@@ -64,11 +65,11 @@ const ChilliDetail = () => {
       idx: "01",
       title: "Spice & Grinding Industry",
       desc: isByadgi
-        ? "Perfect for making mild chilli powder and seasoning mixes that need a deep natural red color."
-        : "Perfect for making hot chilli powder and spice mixes that need a strong, steady heat profile.",
+        ? "Best for mild chilli powder and seasoning mixes that need a rich, bright red color."
+        : "Best for spicy chilli powder and curry powders that need a strong, steady heat level.",
       highlights: isByadgi
-        ? ["Easy to grind into fine powder", "Deep natural red coloring", "No chemical additives needed"]
-        : ["Keeps heat level steady in mixes", "Excellent powder grind yield", "Long-lasting spice strength"],
+        ? ["Easy to grind into fine powder", "Beautiful natural red color", "100% natural color, no chemicals"]
+        : ["Holds a steady heat level in spice mixes", "High powder yield after grinding", "Stays fresh and spicy for a long time"],
       numColor: "text-[#8f000d]/15",
       accentLine: "border-[#8f000d]"
     },
@@ -76,12 +77,12 @@ const ChilliDetail = () => {
       idx: "02",
       title: "Food Processing Lines",
       desc: isByadgi
-        ? "Great for making sauces, pastes, and packaged foods that need a rich red color without high heat."
-        : "Great for making hot sauces, pastes, and packaged foods that need a spicy kick and bright red color.",
+        ? "Ideal for making mild sauces, pastes, and packaged foods that need color but no heat."
+        : "Ideal for making hot sauces, pastes, and snacks that need a spicy kick and great color.",
       highlights: [
-        "Works well with vinegar and sauces",
-        "Stays fresh after heat processing",
-        "Keeps sauces thick and consistent"
+        "Blends perfectly in sauces and pastes",
+        "Retains flavor and color during cooking",
+        "Helps keep sauces thick and uniform"
       ],
       numColor: "text-[#1F5E3B]/15",
       accentLine: "border-[#1F5E3B]"
@@ -90,11 +91,11 @@ const ChilliDetail = () => {
       idx: "03",
       title: isByadgi ? "Natural Color Extraction" : "Oleoresin Extraction",
       desc: isByadgi
-        ? "Highly preferred for extracting natural red food color because of its very high ASTA pigment level."
-        : "Highly preferred for extracting hot spice oil because of its naturally high capsaicin level.",
+        ? "Excellent for extracting natural red color due to its high ASTA color value."
+        : "Excellent for extracting hot spice oil due to its high natural heat level.",
       highlights: isByadgi
-        ? ["High yield of natural red color", "Pure color pigment quality", "Ideal for food coloring labs"]
-        : ["High yield of hot spice oil", "Excellent extraction recovery", "Clean and pure filter standard"],
+        ? ["High output of natural red color", "Clean and pure color quality", "Perfect for natural food coloring"]
+        : ["High output of pure spice oil", "High recovery rate during processing", "Clean and pure oil quality"],
       numColor: "text-[#cca72f]/25",
       accentLine: "border-[#cca72f]"
     }
@@ -211,8 +212,15 @@ const ChilliDetail = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5 flex flex-col justify-center text-left"
           >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Export Grade {chilli.grade}</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight mb-6">Technical Specifications</h2>
+            <SectionHeading
+              kicker="Specifications"
+              title={
+                <>
+                  Quality specifications for <span className="text-[#8f000d]">{chilli.name}</span>
+                </>
+              }
+              className="mb-6"
+            />
 
             <div className="grid grid-cols-2 gap-3 md:gap-4 mb-8">
 
@@ -222,14 +230,14 @@ const ChilliDetail = () => {
                   <div className="p-2 rounded-lg bg-red-50 text-[#8f000d]">
                     <FiTag className="text-[16px]" />
                   </div>
-                  <span className="text-neutral-700 font-bold text-[10px] uppercase tracking-wider">Variety Name</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#5a403e]/70 uppercase tracking-wider">Chilli variety</span>
                 </div>
                 <div className="flex justify-between items-end">
                   <div>
-                    <div className="text-[#1a1c1e] font-bold text-[14px] md:text-[15px] font-heading">{chilli.name}</div>
-                    <div className="text-[10px] text-neutral-400 mt-0.5 font-body">Premium Commercial Export Code</div>
+                    <div className="text-[#1a1c1e] font-['urbanist'] font-extrabold text-[14px] md:text-[15px]">{chilli.name}</div>
+                    <div className="font-['Nunito'] font-semibold text-[11px] text-[#5a403e]/60 mt-0.5">Official grade code</div>
                   </div>
-                  <span className="text-[10px] font-semibold text-[#8f000d] bg-red-50 px-2 py-0.5 rounded">Verified Quality</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#8f000d] bg-[#8f000d]/5 px-2.5 py-0.5 rounded">Verified Quality</span>
                 </div>
               </div>
 
@@ -239,11 +247,11 @@ const ChilliDetail = () => {
                   <div className="p-2 rounded-lg bg-red-50 text-[#8f000d]">
                     <GiChiliPepper className="text-[16px]" />
                   </div>
-                  <span className="text-neutral-700 font-bold text-[10px] uppercase tracking-wider">Heat Level</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#5a403e]/70 uppercase tracking-wider">Spice level (heat)</span>
                 </div>
                 <div>
-                  <div className="text-[#8f000d] font-bold text-[14px] md:text-[15px] leading-tight font-heading">{chilli.heatLevel}</div>
-                  <div className="text-[10px] text-neutral-400 mt-1 font-body">Scoville Units (SHU)</div>
+                  <div className="text-[#8f000d] font-['urbanist'] font-extrabold text-[14px] md:text-[15px] leading-tight">{chilli.heatLevel}</div>
+                  <div className="font-['Nunito'] font-semibold text-[11px] text-[#5a403e]/60 mt-1">Heat level (SHU)</div>
                 </div>
               </div>
 
@@ -253,11 +261,11 @@ const ChilliDetail = () => {
                   <div className="p-2 rounded-lg bg-yellow-50 text-[#cca72f]">
                     <FiAward className="text-[16px]" />
                   </div>
-                  <span className="text-neutral-700 font-bold text-[10px] uppercase tracking-wider">Color value</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#5a403e]/70 uppercase tracking-wider">Red color level</span>
                 </div>
                 <div>
-                  <div className="text-[#cca72f] font-bold text-[14px] md:text-[15px] leading-tight font-heading">{chilli.colorValue}</div>
-                  <div className="text-[10px] text-neutral-400 mt-1 font-body">ASTA Color Units</div>
+                  <div className="text-[#cca72f] font-['urbanist'] font-extrabold text-[14px] md:text-[15px] leading-tight">{chilli.colorValue}</div>
+                  <div className="font-['Nunito'] font-semibold text-[11px] text-[#5a403e]/60 mt-1">Color level (ASTA)</div>
                 </div>
               </div>
 
@@ -267,11 +275,11 @@ const ChilliDetail = () => {
                   <div className="p-2 rounded-lg bg-green-50 text-[#1f5e3b]">
                     <FiCheckCircle className="text-[16px]" />
                   </div>
-                  <span className="text-neutral-700 font-bold text-[10px] uppercase tracking-wider">Stem cut</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#5a403e]/70 uppercase tracking-wider">Stem type</span>
                 </div>
                 <div>
-                  <div className="text-[#1a1c1e] font-bold text-[14px] md:text-[15px] leading-tight font-heading">{chilli.stemType}</div>
-                  <div className="text-[10px] text-neutral-400 mt-1 font-body">Processing Style</div>
+                  <div className="text-[#1a1c1e] font-['urbanist'] font-extrabold text-[14px] md:text-[15px] leading-tight">{chilli.stemType}</div>
+                  <div className="font-['Nunito'] font-semibold text-[11px] text-[#5a403e]/60 mt-1">Stem style (with/without)</div>
                 </div>
               </div>
 
@@ -281,11 +289,11 @@ const ChilliDetail = () => {
                   <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
                     <FiDroplet className="text-[16px]" />
                   </div>
-                  <span className="text-neutral-700 font-bold text-[10px] uppercase tracking-wider">Moisture</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#5a403e]/70 uppercase tracking-wider">Moisture level</span>
                 </div>
                 <div>
-                  <div className="text-[#1a1c1e] font-bold text-[14px] md:text-[15px] leading-tight font-heading">{chilli.moisture}</div>
-                  <div className="text-[10px] text-neutral-400 mt-1 font-body font-semibold text-blue-600">Export Standard</div>
+                  <div className="text-[#1a1c1e] font-['urbanist'] font-extrabold text-[14px] md:text-[15px] leading-tight">{chilli.moisture}</div>
+                  <div className="font-['Nunito'] font-semibold text-[11px] text-blue-600/80 mt-1">Moisture limit</div>
                 </div>
               </div>
 
@@ -295,21 +303,21 @@ const ChilliDetail = () => {
                   <div className="p-2 rounded-lg bg-neutral-50 text-neutral-600">
                     <FiMapPin className="text-[16px]" />
                   </div>
-                  <span className="text-neutral-700 font-bold text-[10px] uppercase tracking-wider">Regional Origin</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-[#5a403e]/70 uppercase tracking-wider">Where it is grown</span>
                 </div>
                 <div className="flex justify-between items-end">
                   <div>
-                    <div className="text-[#1a1c1e] font-bold text-[14px] md:text-[15px] font-heading">Guntur, Andhra Pradesh</div>
-                    <div className="text-[10px] text-neutral-400 mt-0.5 font-body">Direct Farm Source Supply</div>
+                    <div className="text-[#1a1c1e] font-['urbanist'] font-extrabold text-[14px] md:text-[15px]">Guntur, Andhra Pradesh</div>
+                    <div className="font-['Nunito'] font-semibold text-[11px] text-[#5a403e]/60 mt-0.5">Direct from Guntur farms</div>
                   </div>
-                  <span className="text-[10px] font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded">Grown in India</span>
+                  <span className="font-['urbanist'] font-extrabold text-[10px] text-green-600 bg-green-50 px-2.5 py-0.5 rounded">Grown in India</span>
                 </div>
               </div>
 
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="flex-1 bg-[#8f000d] text-white py-4 rounded font-bold hover:bg-[#72000a] transition-all active:scale-95 text-center uppercase tracking-wider text-[11px] shadow-lg shadow-[#8f000d]/10">
+              <Link to="/contact" className="flex-1 bg-[#8f000d] text-white py-4 rounded-lg font-['urbanist'] font-bold hover:bg-[#72000a] transition-all active:scale-95 text-center uppercase tracking-wider text-[13px] shadow-lg shadow-[#8f000d]/10">
                 Send Inquiry
               </Link>
             </div>
@@ -325,14 +333,20 @@ const ChilliDetail = () => {
 
             {/* Left Column: Text Content */}
             <div className="text-left space-y-6">
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-                The {isByadgi ? "Pigmentation" : "Pungency"} King
-              </h2>
-              <p className="font-body-md text-body-md text-[#5a403e] leading-relaxed text-justify">
-                {chilli.description} Sourced directly from Guntur’s most fertile tracts, this selection represents the best quality Indian dry red chilli available for export.
+              <SectionHeading
+                kicker="Variety profile"
+                title={
+                  <>
+                    The {isByadgi ? "pigmentation" : "pungency"} <span className="text-[#8f000d]">king</span>
+                  </>
+                }
+                className="mb-4"
+              />
+              <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] sm:text-[16px] leading-[1.6] text-justify">
+                {chilli.description} We buy our chillies directly from the best farms in Guntur. Every batch is carefully selected, checked, and sorted. We make sure they are fresh, clean, and safe for spice factories and food companies worldwide.
               </p>
-              <p className="font-body-md text-body-md text-[#5a403e] leading-relaxed text-justify">
-                Its status as a top choice for spice industries and international markets stems from its consistent color retention, ideal skin thickness, and clean pod structure. It is predominantly used in the production of high-grade chilli powder, spice blends, and food processing lines. At Minha, we ensure every batch of {chilli.name} meets stringent global food safety standards, including FSSAI, APEDA, and ISO compliance.
+              <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] sm:text-[16px] leading-[1.6] text-justify">
+                With Minha, you get pure dry red chillies that meet all standard export quality checks. We handle the process from selection to container packaging to ensure it reaches you in perfect condition.
               </p>
             </div>
 
@@ -355,15 +369,19 @@ const ChilliDetail = () => {
       {/* 4. Technical Specifications Table */}
       <section className="py-10 md:py-14 bg-white border-t border-b border-neutral-100">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="text-center mb-8">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Technical Datasheet</span>
-            <h2 className="font-['urbanist'] font-extrabold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight text-center">Export Quality Specifications</h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] max-w-2xl mx-auto mt-3 text-center">
-              Standardized laboratory testing parameters verified for direct trade bulk cargo.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Specifications"
+            title={
+              <>
+                Export quality <span className="text-[#8f000d]">specifications</span>
+              </>
+            }
+            intro="Clear quality and laboratory parameters checked for every batch we ship."
+            className="mb-8"
+          />
 
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 font-body text-[14px]">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 font-['Nunito'] text-[14px]">
 
             {/* Column 1 */}
             <div className="space-y-6">
@@ -371,28 +389,28 @@ const ChilliDetail = () => {
               {/* Item 1 */}
               <div className="flex justify-between items-center pb-4 border-b border-neutral-100">
                 <div className="text-left">
-                  <span className="font-bold text-neutral-800 text-[14px] md:text-[15px] block">Scoville Heat Units (SHU)</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">HPLC Analysis Method</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Heat level</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">How we measure heat (SHU)</span>
                 </div>
-                <span className="font-bold text-[#8f000d] text-[14px] md:text-[15px]">{chilli.heatLevel}</span>
+                <span className="font-['urbanist'] font-extrabold text-[#8f000d] text-[14.5px] md:text-[15.5px]">{chilli.heatLevel}</span>
               </div>
 
               {/* Item 2 */}
               <div className="flex justify-between items-center pb-4 border-b border-neutral-100">
                 <div className="text-left">
-                  <span className="font-bold text-neutral-800 text-[14px] md:text-[15px] block">ASTA Color Value</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">Spectrophotometry</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Red color level</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">How we measure color (ASTA)</span>
                 </div>
-                <span className="font-bold text-[#cca72f] text-[14px] md:text-[15px]">{chilli.colorValue}</span>
+                <span className="font-['urbanist'] font-extrabold text-[#cca72f] text-[14.5px] md:text-[15.5px]">{chilli.colorValue}</span>
               </div>
 
               {/* Item 3 */}
               <div className="flex justify-between items-center pb-4 border-b border-neutral-100">
                 <div className="text-left">
-                  <span className="font-bold text-neutral-800 text-[14px] md:text-[15px] block">Moisture Content</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">Oven Drying Method</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Moisture level</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">Dryness percentage check</span>
                 </div>
-                <span className="font-bold text-neutral-800 text-[14px] md:text-[15px]">{chilli.moisture} Max</span>
+                <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14.5px] md:text-[15.5px]">{chilli.moisture} Max</span>
               </div>
 
             </div>
@@ -403,28 +421,28 @@ const ChilliDetail = () => {
               {/* Item 4 */}
               <div className="flex justify-between items-center pb-4 border-b border-neutral-100">
                 <div className="text-left">
-                  <span className="font-bold text-neutral-800 text-[14px] md:text-[15px] block">Purity Standard</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">Manual Sorting</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Purity level</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">Careful sorting quality</span>
                 </div>
-                <span className="font-bold text-neutral-800 text-[14px] md:text-[15px]">99.5% Min</span>
+                <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14.5px] md:text-[15.5px]">99.5% Min</span>
               </div>
 
               {/* Item 5 */}
               <div className="flex justify-between items-center pb-4 border-b border-neutral-100">
                 <div className="text-left">
-                  <span className="font-bold text-neutral-800 text-[14px] md:text-[15px] block">Foreign Matter</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">Visual Inspection</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Foreign materials</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">Stems and dust limit</span>
                 </div>
-                <span className="font-bold text-[#ba1a1a] text-[14px] md:text-[15px]">&lt; 1% Max</span>
+                <span className="font-['urbanist'] font-extrabold text-[#ba1a1a] text-[14.5px] md:text-[15.5px]">&lt; 1% Max</span>
               </div>
 
               {/* Item 6 */}
               <div className="flex justify-between items-center pb-4 border-b border-neutral-100">
                 <div className="text-left">
-                  <span className="font-bold text-neutral-800 text-[14px] md:text-[15px] block">Shelf Life</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">Proper Dry Storage</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Shelf life</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">When stored in dry place</span>
                 </div>
-                <span className="font-bold text-neutral-800 text-[14px] md:text-[15px]">12 - 18 Months</span>
+                <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14.5px] md:text-[15.5px]">12 - 18 Months</span>
               </div>
 
             </div>
@@ -433,10 +451,10 @@ const ChilliDetail = () => {
             <div className="md:col-span-2 pt-4">
               <div className="flex flex-col md:flex-row md:items-center justify-between p-6 bg-[#FAF8F4] rounded-2xl border border-[#cca72f]/20">
                 <div className="text-left mb-4 md:mb-0">
-                  <span className="font-semibold text-neutral-800 text-[14px] md:text-[15px] block">Standard Export Packaging</span>
-                  <span className="text-[11px] text-neutral-400 block mt-1">OEM & Bulk supply configurations</span>
+                  <span className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[14px] md:text-[15px] block">Standard export packaging</span>
+                  <span className="font-['Nunito'] font-semibold text-[#5a403e]/60 text-[11px] block mt-1">Bags and custom cartons</span>
                 </div>
-                <span className="text-[13px] font-semibold text-neutral-700 bg-white px-4 py-2.5 rounded-xl border border-neutral-100 text-left md:text-right leading-relaxed max-w-xl">
+                <span className="font-['Nunito'] font-semibold text-[13px] text-[#5a403e] bg-white px-4 py-2.5 rounded-xl border border-neutral-100 text-left md:text-right leading-relaxed max-w-xl">
                   Standard Jute Bags (5kg/10kg/15kg/25kg), PP Bags, or Custom Vacuum-Sealed Cartons
                 </span>
               </div>
@@ -450,21 +468,24 @@ const ChilliDetail = () => {
       <section className="py-10 md:py-14 bg-surface-container-low border-t border-b border-neutral-100">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 
-          <div className="text-center mb-8">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Industrial Supply Scope</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight text-center">Industrial Applications</h2>
-            <p className="font-['
-            nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] max-w-2xl mx-auto mt-3 text-center">
-              Providing the raw material backbone for diverse food, spice processing, and extraction lines globally.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Ideal uses"
+            title={
+              <>
+                Where this variety is <span className="text-[#8f000d]">used</span>
+              </>
+            }
+            intro="We supply our dry red chillies to spice factories, food processors, and color extraction labs worldwide."
+            className="mb-8"
+          />
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {applications.map((app, idx) => (
               <div key={idx} className="flex flex-col text-left space-y-5 relative">
 
                 {/* Number Overlay */}
-                <div className={`font-heading font-extrabold text-[72px] leading-none ${app.numColor} select-none`}>
+                <div className={`font-['urbanist'] font-black text-[72px] leading-none ${app.numColor} select-none`}>
                   {app.idx}
                 </div>
 
@@ -472,16 +493,16 @@ const ChilliDetail = () => {
                 <div className={`border-t-2 ${app.accentLine} w-16 pt-3`} />
 
                 <div>
-                  <h4 className="font-heading font-bold text-[18px] text-[#1a1c1e] mb-3">{app.title}</h4>
-                  <p className="text-neutral-500 font-body text-[13.5px] leading-relaxed mb-5">{app.desc}</p>
+                  <h4 className="font-['urbanist'] font-extrabold text-[18px] text-[#1a1c1e] mb-3">{app.title}</h4>
+                  <p className="text-[#5a403e] font-['Nunito'] font-semibold text-[13.5px] leading-relaxed mb-5">{app.desc}</p>
                 </div>
 
                 {/* Highlights Bullet List */}
-                <ul className="space-y-2.5 border-t border-neutral-100 pt-5 text-[12.5px] font-body font-semibold text-[#1a1c1e] flex-grow">
+                <ul className="space-y-2.5 border-t border-neutral-100 pt-5 flex-grow">
                   {app.highlights.map((highlight, hIdx) => (
-                    <li key={hIdx} className="flex items-center gap-2">
-                      <span className="text-[#1f5e3b] text-[14px]">✓</span>
-                      <span>{highlight}</span>
+                    <li key={hIdx} className="grid grid-cols-[8px_1fr] gap-1.5 text-left items-start">
+                      <span className="w-[5px] h-[5px] rounded-full bg-[#8f000d] mt-[8px] flex-shrink-0" />
+                      <span className="leading-snug text-[14.5px] text-[#5a403e] font-['Nunito'] font-semibold">{highlight}</span>
                     </li>
                   ))}
                 </ul>
@@ -497,23 +518,33 @@ const ChilliDetail = () => {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="bg-on-background text-white rounded-xl overflow-hidden flex flex-col md:flex-row-reverse">
             <div className="md:w-1/2 p-12 flex flex-col justify-center text-left">
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-white tracking-tight mb-6">Logistics & Global Export</h2>
-              <ul className="space-y-4 font-body-md text-white/80">
-                <li className="flex gap-4">
-                  <span className="text-secondary-fixed flex-shrink-0">✓</span>
-                  <span>Moisture-proof packaging to keep chillies dry during sea shipping.</span>
+              <SectionHeading
+                tone="light"
+                kicker="Shipping & Packing"
+                kickerColor="#cca72f"
+                title={
+                  <>
+                    Global shipping and <span className="text-[#cca72f]">packing</span>
+                  </>
+                }
+                className="mb-6"
+              />
+              <ul className="space-y-4 text-white/85">
+                <li className="grid grid-cols-[14px_1fr] gap-3 text-left items-start">
+                  <span className="text-secondary-fixed select-none flex justify-center text-[15px] leading-none pt-[2px]">✓</span>
+                  <span className="leading-snug text-[13.5px] font-['Nunito'] font-semibold text-white/85">Moisture-proof bags to keep the chillies fresh and dry during sea travel.</span>
                 </li>
-                <li className="flex gap-4">
-                  <span className="text-secondary-fixed flex-shrink-0">✓</span>
-                  <span>Holds 6.5 metric tons in a 20ft container and 14 metric tons in a 40ft container.</span>
+                <li className="grid grid-cols-[14px_1fr] gap-3 text-left items-start">
+                  <span className="text-secondary-fixed select-none flex justify-center text-[15px] leading-none pt-[2px]">✓</span>
+                  <span className="leading-snug text-[13.5px] font-['Nunito'] font-semibold text-white/85">Fits 6.5 tons in a small 20ft container and 14 tons in a large 40ft container.</span>
                 </li>
-                <li className="flex gap-4">
-                  <span className="text-secondary-fixed flex-shrink-0">✓</span>
-                  <span>We offer custom labels and packaging designed for your brand.</span>
+                <li className="grid grid-cols-[14px_1fr] gap-3 text-left items-start">
+                  <span className="text-secondary-fixed select-none flex justify-center text-[15px] leading-none pt-[2px]">✓</span>
+                  <span className="leading-snug text-[13.5px] font-['Nunito'] font-semibold text-white/85">We provide custom labels and printing matching your brand design.</span>
                 </li>
-                <li className="flex gap-4">
-                  <span className="text-secondary-fixed flex-shrink-0">✓</span>
-                  <span>Third-party quality checks (SGS or Intertek) are available if you ask.</span>
+                <li className="grid grid-cols-[14px_1fr] gap-3 text-left items-start">
+                  <span className="text-secondary-fixed select-none flex justify-center text-[15px] leading-none pt-[2px]">✓</span>
+                  <span className="leading-snug text-[13.5px] font-['Nunito'] font-semibold text-white/85">We can arrange third-party checks like SGS or Intertek if you need them.</span>
                 </li>
               </ul>
             </div>
@@ -527,21 +558,31 @@ const ChilliDetail = () => {
       {/* 7. Related Varieties */}
       <section className="py-10 md:py-14 bg-surface">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight mb-8 text-center">Explore Other Varieties</h2>
+          <SectionHeading
+            align="center"
+            kicker="Other choices"
+            title={
+              <>
+                Explore other <span className="text-[#8f000d]">varieties</span>
+              </>
+            }
+            intro="See our other dry red chillies to find the perfect heat and color level for your needs."
+            className="mb-8"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl mx-auto">
             {relatedChillies.map((relatedChilli, idx) => (
               <div key={idx} className="bg-white rounded-lg overflow-hidden ambient-shadow flex flex-col border border-outline-variant card-hover transition-all text-left">
                 <Link to={`/varieties/${relatedChilli.id}`} className="block h-48 w-full overflow-hidden">
                   <img alt={relatedChilli.name} className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" src={relatedChilli.image} />
                 </Link>
-                <div class="p-8">
-                  <h4 className="font-headline-md text-headline-md mb-2">
-                    <Link to={`/varieties/${relatedChilli.id}`} className="hover:text-primary transition-colors">
+                <div className="p-8">
+                  <h4 className="font-['urbanist'] font-extrabold text-[18px] text-[#1a1c1e] mb-2">
+                    <Link to={`/varieties/${relatedChilli.id}`} className="hover:text-[#8f000d] transition-colors">
                       {relatedChilli.name}
                     </Link>
                   </h4>
-                  <p className="text-on-surface-variant text-body-sm mb-6">{relatedChilli.description}</p>
-                  <Link to={`/varieties/${relatedChilli.id}`} className="text-primary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform uppercase text-sm">
+                  <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[13.5px] mb-6 leading-relaxed">{relatedChilli.description}</p>
+                  <Link to={`/varieties/${relatedChilli.id}`} className="text-[#8f000d] font-['urbanist'] font-bold flex items-center gap-2 hover:translate-x-1 transition-transform uppercase text-sm">
                     View Details →
                   </Link>
                 </div>
@@ -566,15 +607,19 @@ const ChilliDetail = () => {
 
           {/* Right: Content & Action */}
           <div className="md:w-7/12 p-8 md:p-12 flex flex-col justify-center text-left space-y-6">
-            <div className="inline-block px-3 py-1 bg-[#8f000d]/10 text-[#8f000d] font-['urbanist'] font-semibold text-[10px] uppercase tracking-[0.15em] rounded-md self-start">
-              Direct Trade Supply
-            </div>
-            <h2 className="font-['urbanist'] font-bold text-[22px] sm:text-[26px] md:text-[30px] leading-[1.25] text-[#1a1c1e] tracking-tight">
-              Request Quote for <span className="text-[#8f000d] block mt-1">{chilli.name}</span>
-            </h2>
-            <p className="font-['Nunito'] text-[#5a403e] text-[14px] leading-relaxed">
-              Partner with India’s leading spice export desk. Request specialized bulk pricing, certificate reports (COA/Aflatoxin), and custom logistics parameters for this variety.
-            </p>
+            <SectionHeading
+              align="left"
+              kicker="Direct Trade Supply"
+              title={
+                <>
+                  Request Quote for <span className="text-[#8f000d] block mt-1">{chilli.name}</span>
+                </>
+              }
+              intro="Partner with India's trusted spice export team. Get wholesale prices, quality certificate reports, and customized shipping details for this variety."
+              className="mb-2"
+              showLeftLine={true}
+              showRightLine={false}
+            />
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
                 href={`https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20to%20request%20export%20details%2C%20COA%20%2F%20Aflatoxin%20certificates%2C%20and%20wholesale%20pricing%20for%20${encodeURIComponent(chilli.name)}.`}

@@ -9,8 +9,10 @@ import {
   FiAward,
   FiPackage,
   FiShield,
-  FiStar
+  FiStar,
+  FiArrowRight
 } from 'react-icons/fi';
+import SectionHeading from '../components/common/SectionHeading';
 
 import dryChilliSortingFacility from '../assets/dry_chilli_sorting_facility.png';
 
@@ -53,7 +55,7 @@ const QualityAssurance = () => {
       num: '01',
       title: 'Farm Visits',
       image: qaStepFarm,
-      desc: 'Our journey begins at the origin. We conduct on-site inspections at partner farms to monitor crop health.',
+      desc: 'We visit our partner farms to check crop quality and ensure the best chillies are selected from the very beginning.',
       colorClass: 'border-[#2c6a46]/40',
       dotBgClass: 'bg-[#2c6a46]',
       badgeBgClass: 'bg-[#2c6a46]'
@@ -62,7 +64,7 @@ const QualityAssurance = () => {
       num: '02',
       title: 'Acquisition',
       image: qaStepAcquisition,
-      desc: 'Strict procurement protocols ensure only the top 10% of harvested yield enters our supply chain.',
+      desc: 'We carefully choose high-quality chillies from trusted farmers to ensure only the best produce enters our supply chain.',
       colorClass: 'border-[#8f000d]/40',
       dotBgClass: 'bg-[#8f000d]',
       badgeBgClass: 'bg-[#8f000d]'
@@ -71,7 +73,7 @@ const QualityAssurance = () => {
       num: '03',
       title: 'Processing',
       image: qaStepProcessing,
-      desc: 'Cleaning, stem removal, and moisture control are performed in our climate-controlled facility.',
+      desc: 'The chillies are cleaned, sorted, and processed in our modern facility while maintaining strict quality and hygiene standards.',
       colorClass: 'border-[#cca72f]/40',
       dotBgClass: 'bg-[#cca72f]',
       badgeBgClass: 'bg-[#cca72f]'
@@ -80,14 +82,12 @@ const QualityAssurance = () => {
       num: '04',
       title: 'Shipping',
       image: qaStepShipping,
-      desc: 'Final export clearance and container loading under supervised inspection for timely global delivery.',
+      desc: 'Every shipment is carefully packed, inspected, and prepared for safe and timely delivery to customers around the world.',
       colorClass: 'border-[#d97706]/40',
       dotBgClass: 'bg-[#d97706]',
       badgeBgClass: 'bg-[#d97706]'
     }
   ];
-
-
 
   return (
     <div className="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen relative overflow-hidden">
@@ -157,34 +157,43 @@ const QualityAssurance = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-left space-y-6"
           >
-            <div>
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">Premium Standards for Global Markets</h2>
-            </div>
+            <SectionHeading
+              align="left"
+              kicker="Our standards"
+              title={
+                <>
+                  Premium standards for <span className="text-[#8f000d]">global markets</span>
+                </>
+              }
+              className="mb-4"
+              showLeftLine={true}
+              showRightLine={false}
+            />
 
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-              At Minha Imports & Exports, quality is not just a department—it is our core identity. We specialize in the high-stakes export of Guntur Dry Red Chillies, where precision in grading and hygiene determines global competitiveness.
+              At Minha Imports & Exports, quality is at the heart of everything we do. We carefully source, process, and export premium Guntur dry red chillies while maintaining high standards at every step.
             </p>
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-              Every consignment undergoes rigorous multi-tier testing. From field-level crop monitoring to final airtight packaging, our protocols ensure that our clients receive produce that meets the strictest international food safety and aesthetic standards.
+              From selecting the best chillies to the final packaging, every batch goes through thorough quality checks. Our team ensures that each shipment is clean, safe, and meets international food safety and export standards, so our customers receive consistent quality every time.
             </p>
 
             <ul className="space-y-4 pt-2">
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="text-[#2c6a46] text-xl shrink-0 mt-0.5" />
                 <span className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-                  Zero-tolerance policy on cross-contamination and impurities.
+                  Every batch is carefully processed to ensure it is clean, safe, and free from impurities.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="text-[#2c6a46] text-xl shrink-0 mt-0.5" />
                 <span className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-                  Advanced moisture-level monitoring for extended shelf life.
+                  Moisture levels are carefully monitored to keep the chillies fresh and maintain a longer shelf life.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FiCheckCircle className="text-[#2c6a46] text-xl shrink-0 mt-0.5" />
                 <span className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-                  Ethical sourcing directly from certified Guntur farming clusters.
+                  We source our chillies directly from trusted farmers in Guntur to ensure consistent quality and authenticity.
                 </span>
               </li>
             </ul>
@@ -197,21 +206,17 @@ const QualityAssurance = () => {
       <section className="bg-surface-container-low py-10 md:py-14 relative overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">
-              Our Process
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Our 4-Stage Quality Process
-            </h2>
-            <div className="w-24 h-[3px] bg-[#8f000d] mx-auto mt-4 rounded-full"></div>
-          </motion.div>
+          <SectionHeading
+            align="center"
+            kicker="Our process"
+            title={
+              <>
+                Our four-stage <span className="text-[#8f000d]">quality process</span>
+              </>
+            }
+            className="mb-10"
+            showRightLine={true}
+          />
 
           <div className="relative mt-8">
             {/* Horizontal connecting line with midpoint dots (Desktop only) */}
@@ -278,23 +283,19 @@ const QualityAssurance = () => {
       <section className="py-10 md:py-14 bg-surface">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 text-left"
-          >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">
-              Our Benchmarks
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Certified Quality Measures
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] mt-4 max-w-2xl">
-              Rigorous laboratory analysis and inspections are implemented to monitor ASTA moisture, purity, safety index, and phytosanitary metrics.
-            </p>
-          </motion.div>
+          <SectionHeading
+            align="left"
+            kicker="Our benchmarks"
+            title={
+              <>
+                Certified quality <span className="text-[#8f000d]">measures</span>
+              </>
+            }
+            intro="Every batch goes through detailed quality checks and inspections to ensure it meets high standards for purity, safety, freshness, and international export requirements."
+            className="mb-10"
+            showLeftLine={true}
+            showRightLine={false}
+          />
 
           <motion.div
             variants={staggerContainer}
@@ -325,11 +326,11 @@ const QualityAssurance = () => {
               </div>
 
               {/* Background removed chilli bowl image at bottom part of card */}
-              <div className="absolute bottom-0 left-0 right-0 h-[42%] pointer-events-none select-none z-0">
+              <div className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none select-none z-0">
                 <img
                   src={glowingChilliPremiumRemoveBg}
                   alt="Quality Red Chillies Bowl"
-                  className="w-full h-full object-contain object-bottom scale-95"
+                  className="w-full h-full object-contain object-bottom"
                 />
               </div>
             </motion.div>
@@ -494,20 +495,18 @@ const QualityAssurance = () => {
             className="space-y-8"
           >
             {/* Heading */}
-            <div className="space-y-3">
-              <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase block">
-                Global Sourcing Partner
-              </span>
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] tracking-tight text-[#1a1c1e]">
-                Quality You Can Trust
-              </h2>
-              <div className="w-16 h-[2.5px] bg-[#8f000d] mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            {/* Description */}
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] max-w-3xl mx-auto">
-              Our legacy is built on the consistency of our supply. By integrating technology with traditional farming wisdom, we provide a transparent bridge between Indian agriculture and global commerce. When you choose Minha, you choose a partner committed to your brand's integrity.
-            </p>
+            <SectionHeading
+              align="center"
+              kicker="Global sourcing partner"
+              title={
+                <>
+                  Quality you can <span className="text-[#8f000d]">trust</span>
+                </>
+              }
+              intro="Our success is built on consistent quality, reliable supply, and trusted partnerships. By combining modern technology with experienced farmers, we deliver premium products to customers around the world."
+              className="mb-8"
+              showRightLine={true}
+            />
 
             {/* Stats Divider Line */}
             <div className="border-t border-neutral-200/60 my-5"></div>
@@ -524,7 +523,7 @@ const QualityAssurance = () => {
                   Certified Quality
                 </div>
                 <p className="text-[12.5px] text-[#5a403e]/80 font-['Nunito'] max-w-[220px] mx-auto leading-relaxed mt-1">
-                  Every batch passes strict ASTA & chemical residue limits.
+                  Every batch is tested to meet international quality and food safety standards.
                 </p>
               </div>
 
@@ -537,7 +536,7 @@ const QualityAssurance = () => {
                   Global Destinations
                 </div>
                 <p className="text-[12.5px] text-[#5a403e]/80 font-['Nunito'] max-w-[220px] mx-auto leading-relaxed mt-1">
-                  Delivering dry red chilli imports to global port hubs.
+                  Supplying premium dry red chillies to customers across the world.
                 </p>
               </div>
 
@@ -551,7 +550,7 @@ const QualityAssurance = () => {
                   Supply Chain Visibility
                 </div>
                 <p className="text-[12.5px] text-[#5a403e]/80 font-['Nunito'] max-w-[220px] mx-auto leading-relaxed mt-1">
-                  Real-time batch trace reports from farm blocks to delivery.
+                  Track every batch from the farm to the final shipment.
                 </p>
               </div>
 
@@ -581,34 +580,27 @@ const QualityAssurance = () => {
 
             {/* Left Column: Brand Quote (lg:col-span-5) */}
             <div className="relative space-y-4 text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8 xl:pr-12 lg:col-span-5 w-full z-10">
-              <span className="absolute -top-10 -left-2 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                “
-              </span>
-              <blockquote className="font-['urbanist'] font-medium italic text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 relative z-10">
-                "Excellence is the only standard that travels without a passport. We don't just inspect our chillies; we trace, verify, and guarantee their legacy from Guntur's soil to your doorstep."
-              </blockquote>
-              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-[#cca72f] relative z-10">
+              <SectionHeading
+                align="left"
+                tone="light"
+                kicker="Our standard"
+                kickerColor="#cca72f"
+                intro="Excellence is the only standard that travels without a passport. We don't just inspect our chillies; we trace, verify, and guarantee their legacy from Guntur's soil to your doorstep."
+                className="mb-0"
+                showLeftLine={true}
+                showRightLine={false}
+              />
+              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-white/40 relative z-10 mt-2">
                 — The Minha Quality Council
               </div>
-              <span className="absolute -bottom-14 right-4 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                ”
-              </span>
             </div>
 
             {/* Right Column: CTA Content (lg:col-span-7) */}
             <div className="space-y-5 text-center lg:text-left lg:col-span-7 w-full">
 
-              {/* Tagline Badge */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto lg:mx-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#cca72f] animate-pulse" />
-                <span className="font-['urbanist'] font-bold text-[8.5px] tracking-[0.2em] text-[#cca72f] uppercase">
-                  Premium Sourcing & Logistics
-                </span>
-              </div>
-
               {/* Title */}
-              <h2 className="font-['urbanist'] font-extrabold text-[22px] md:text-[30px] leading-tight text-white tracking-tight">
-                Looking for Premium <br className="hidden sm:inline" /> Quality Chilli Exports?
+              <h2 className="font-['urbanist'] font-bold text-[22px] sm:text-[26px] md:text-[32px] leading-[1.2] text-white tracking-tight">
+                Looking for premium <span className="text-[#cca72f]">chilli exports?</span>
               </h2>
 
               {/* Description */}
@@ -622,9 +614,10 @@ const QualityAssurance = () => {
                   href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20to%20know%20more%20about%20your%20quality%20standards%2C%20testing%20process%2C%20and%20certifications.%20Please%20share%20the%20details."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-[#2c6a46] px-8 py-3.5 rounded-full font-['urbanist'] font-extrabold text-[12px] uppercase tracking-wider hover:bg-neutral-100 hover:text-black shadow-lg shadow-black/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#2c6a46] font-['urbanist'] font-extrabold text-[13px] py-3.5 px-7 rounded-lg uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 group whitespace-nowrap cursor-pointer"
                 >
                   Send Inquiry
+                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
 

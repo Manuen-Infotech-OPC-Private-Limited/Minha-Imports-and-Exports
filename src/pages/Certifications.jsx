@@ -12,6 +12,7 @@ import {
   FiX,
   FiZoomIn,
 } from 'react-icons/fi';
+import SectionHeading from '../components/common/SectionHeading';
 
 // Existing assets
 import fssaiLogo from '../assets/3fssai-logo-png.png';
@@ -40,7 +41,7 @@ const certifications = [
     id: 'iso9001',
     name: 'ISO 9001:2015',
     subtitle: 'Quality Management System',
-    desc: 'Independently assessed by QRO and compliant with ISO 9001:2015 for Trading, Export, Storage, Processing, and Packaging of Agricultural Commodities.',
+    desc: 'Certified for maintaining high standards in the trading, export, storage, processing, and packaging of agricultural products.',
     icon: <FiAward className="text-[#2c6a46] text-2xl" />,
     accentColor: '#2c6a46',
     certNo: '2020082101BGS',
@@ -51,35 +52,12 @@ const certifications = [
     id: 'iso22000',
     name: 'ISO 22000:2018',
     subtitle: 'Food Safety Management Systems',
-    desc: 'Certified by QRO for compliance with ISO 22000:2018 covering Food Safety Management for Trading, Export, Storage, Processing, and Packaging of Agricultural Commodities.',
+    desc: 'Certified for following internationally recognized food safety practices across sourcing, processing, storage, packaging, and export operations.',
     icon: <FiShield className="text-[#8f000d] text-2xl" />,
     accentColor: '#8f000d',
     certNo: '2020082101GS',
     issuedBy: 'QRO — Quality Research Organization',
     image: iso22000Cert,
-  },
-];
-
-const complianceItems = [
-  {
-    icon: <FiShield className="text-[#2c6a46] text-[28px]" />,
-    title: 'Product Safety',
-    desc: 'Stringent lab tests for pesticide residues, aflatoxin limits, and microbial content before every shipment.',
-  },
-  {
-    icon: <FiCheckCircle className="text-[#8f000d] text-[28px]" />,
-    title: 'Hygienic Handling',
-    desc: 'Mechanized sorting and climate-controlled processing to minimize human contact and preserve freshness.',
-  },
-  {
-    icon: <FiGlobe className="text-[#2c6a46] text-[28px]" />,
-    title: 'Export Compliance',
-    desc: 'Full adherence to destination-country specific MRL limits, phytosanitary, and trade regulations.',
-  },
-  {
-    icon: <FiFileText className="text-[#8f000d] text-[28px]" />,
-    title: 'Doc Accuracy',
-    desc: 'Precise Phytosanitary Certificates, Certificate of Origin, and Health Certificates for seamless customs clearance.',
   },
 ];
 
@@ -233,13 +211,12 @@ const Certifications = () => {
             transition={{ duration: 0.6 }}
             className="relative group"
           >
-            <div className="absolute -inset-4 bg-[#cca72f]/10 rounded-xl rotate-2 group-hover:rotate-0 transition-transform duration-500" />
+            <div className="absolute -inset-4 bg-[#cca72f]/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
             <img
               alt="Official trade and compliance documents"
-              className="relative rounded-xl shadow-xl w-full h-[400px] md:h-[480px] object-cover transition-transform duration-500 hover:scale-[1.01]"
+              className="relative rounded-xl shadow-2xl w-full h-[400px] md:h-[480px] object-cover transition-transform duration-500 hover:scale-[1.01]"
               src={chilliBowlTable}
             />
-
           </motion.div>
 
           {/* Right: Text */}
@@ -250,19 +227,23 @@ const Certifications = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-left space-y-6"
           >
-            <div>
-              <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#2c6a46] bg-[#2c6a46]/10 px-3 py-1 rounded-sm uppercase inline-block mb-3">
-                Global Assurance
-              </span>
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-                Upholding the Gold Standard in Spice Export
-              </h2>
-            </div>
+            <SectionHeading
+              align="left"
+              kicker="Global assurance"
+              title={
+                <>
+                  Upholding the gold standard in <span className="text-[#8f000d]">spice export</span>
+                </>
+              }
+              className="mb-4"
+              showLeftLine={true}
+              showRightLine={false}
+            />
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.7]">
-              At Minha Imports &amp; Exports, quality is not just a promise — it is a verifiable standard. Our seed-to-shipment workflow is meticulously documented and audited to ensure every batch of Guntur Chillies meets the stringent requirements of global food safety authorities.
+              At Minha Imports & Exports, quality is more than a promise—it is part of everything we do. From sourcing to shipping, every step is carefully monitored to ensure our Guntur chillies meet high food safety and export standards.
             </p>
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.7]">
-              Our certifications span national food safety, international export regulations, and global trade authorizations — giving our partners complete confidence in every container.
+              Our certifications reflect our commitment to quality, safety, and reliable exports, giving our customers confidence in every shipment.
             </p>
 
             {/* Inline trust logos */}
@@ -292,21 +273,17 @@ const Certifications = () => {
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
           {/* Header */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">
-              Our Credentials
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] text-[#1a1c1e] leading-[1.2] tracking-tight">
-              Internationally Recognised Certifications
-            </h2>
-            <div className="w-20 h-1 bg-[#8f000d] mx-auto mt-4 rounded-full" />
-          </motion.div>
+          <SectionHeading
+            align="center"
+            kicker="Our credentials"
+            title={
+              <>
+                Internationally recognised <span className="text-[#8f000d]">certifications</span>
+              </>
+            }
+            className="mb-10"
+            showRightLine={true}
+          />
 
           {/* Cards Grid */}
           <motion.div
@@ -376,24 +353,21 @@ const Certifications = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 text-left space-y-6"
             >
-              <div>
-                <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.25em] text-[#2c6a46] uppercase inline-block mb-2">
-                  Compliance Standards
-                </span>
-                <h2 className="font-['urbanist'] font-extrabold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-                  Built on Four<br />Pillars of Trust
-                </h2>
-
-                {/* Elegant separator line */}
-                <div className="flex items-center gap-3 my-5">
-                  <div className="h-[1px] w-14 bg-gradient-to-r from-[#cca72f] to-[#cca72f]/20" />
-                  <div className="w-1.5 h-1.5 rotate-45 bg-[#cca72f]" />
-                  <div className="h-[1px] flex-1 bg-gradient-to-r from-[#cca72f]/20 to-transparent" />
-                </div>
-              </div>
+              <SectionHeading
+                align="left"
+                kicker="Compliance standards"
+                title={
+                  <>
+                    Built on four <span className="text-[#8f000d]">pillars of trust</span>
+                  </>
+                }
+                className="mb-4"
+                showLeftLine={true}
+                showRightLine={false}
+              />
 
               <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[14px] sm:text-[15px] leading-relaxed max-w-md">
-                Ensuring global quality through internationally recognized standards and rigorous processes at every stage of sourcing and export.
+                Our certifications reflect our commitment to quality, food safety, and international standards, ensuring every product is sourced, processed, and exported with care and confidence.
               </p>
 
               <div className="pt-2">
@@ -603,14 +577,18 @@ const Certifications = () => {
             viewport={{ once: true }}
             className="order-2 md:order-1 space-y-4"
           >
-            <motion.div variants={fadeUp}>
-              <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#2c6a46] bg-[#2c6a46]/10 px-3 py-1 rounded-sm uppercase inline-block mb-2">
-                Why It Matters
-              </span>
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-                Why Certified Sourcing Matters
-              </h2>
-            </motion.div>
+            <SectionHeading
+              align="left"
+              kicker="Why it matters"
+              title={
+                <>
+                  Why certified <span className="text-[#8f000d]">sourcing matters</span>
+                </>
+              }
+              className="mb-4"
+              showLeftLine={true}
+              showRightLine={false}
+            />
 
             <ul className="space-y-4 pt-1">
               {whyPoints.map((pt, i) => (
@@ -684,34 +662,27 @@ const Certifications = () => {
 
             {/* Left Column: Brand Quote (lg:col-span-5) */}
             <div className="relative space-y-4 text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8 xl:pr-12 lg:col-span-5 w-full z-10">
-              <span className="absolute -top-10 -left-2 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                “
-              </span>
-              <blockquote className="font-['urbanist'] font-medium italic text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 relative z-10">
-                "Compliance is our passport, and uncompromising safety is our path. Our certifications are not just medals on a wall, but a daily promise of purity built for the global stage."
-              </blockquote>
-              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-[#cca72f] relative z-10">
+              <SectionHeading
+                align="left"
+                tone="light"
+                kicker="Our promise"
+                kickerColor="#cca72f"
+                intro="Compliance is our passport, and uncompromising safety is our path. Our certifications are not just medals on a wall, but a daily promise of purity built for the global stage."
+                className="mb-0"
+                showLeftLine={true}
+                showRightLine={false}
+              />
+              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-white/40 relative z-10 mt-2">
                 — The Minha Compliance Registry
               </div>
-              <span className="absolute -bottom-14 right-4 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                ”
-              </span>
             </div>
 
             {/* Right Column: CTA Content (lg:col-span-7) */}
             <div className="space-y-5 text-center lg:text-left lg:col-span-7 w-full">
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto lg:mx-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#cca72f] animate-pulse" />
-                <span className="font-['urbanist'] font-bold text-[8.5px] tracking-[0.2em] text-[#cca72f] uppercase">
-                  Certified Export Partner
-                </span>
-              </div>
-
               {/* Title */}
-              <h2 className="font-['urbanist'] font-extrabold text-[22px] md:text-[30px] leading-tight text-white tracking-tight">
-                Looking for a Certified <br className="hidden sm:inline" /> Chilli Export Partner?
+              <h2 className="font-['urbanist'] font-bold text-[22px] sm:text-[26px] md:text-[32px] leading-[1.2] text-white tracking-tight">
+                Looking for a certified <span className="text-[#cca72f]">chilli export partner?</span>
               </h2>
 
               {/* Description */}
@@ -725,9 +696,10 @@ const Certifications = () => {
                   href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20to%20receive%20your%20certification%20details%20and%20compliance%20documents."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#cca72f] text-[#140002] px-8 py-3.5 rounded-full font-['urbanist'] font-extrabold text-[12px] uppercase tracking-wider hover:bg-[#e0bc55] shadow-lg shadow-[#cca72f]/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#8f000d] font-['urbanist'] font-extrabold text-[13px] py-3.5 px-7 rounded-lg uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 group whitespace-nowrap cursor-pointer"
                 >
-                  Request Certification Details
+                  Request Details
+                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
 

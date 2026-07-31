@@ -1,73 +1,93 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import aboutHarvestImg from '../../assets/about-harvest.png';
+import { FiArrowRight } from 'react-icons/fi';
+import SectionHeading from '../common/SectionHeading';
 import harvest from '../../assets/hero-about.png';
 
+// Mono credential row — the same "trade data" voice as the hero manifest.
+const credentials = [
+  { value: '2013', label: 'Sourcing since' },
+  { value: '5,000 MT', label: 'Annual capacity' },
+  { value: '15+', label: 'Export markets' },
+];
+
+const MotionLink = motion(Link);
+
 const About = () => {
-  const imageUrl = aboutHarvestImg;
-  const MotionLink = motion(Link);
-
   return (
-    <section id="about" className="py-12 md:py-16 px-6 md:px-16 bg-surface-container-low">
-      <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-16 md:py-24 px-6 md:px-12 bg-surface-container-low">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* Left Side: Animated Image Showcase */}
+        {/* Photograph — clean frame, mono caption (swap this image freely) */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          whileHover={{ scale: 1.01 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative group"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
         >
-          {/* Decorative ambient glowing green background wash */}
-          <div className="absolute -inset-4 bg-[#2c6a46]/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500" />
-
-          {/* Main Image */}
           <img
-            alt="Chilli Harvest"
+            alt="Dry red chilli harvest in Guntur"
             loading="lazy"
-            className="relative rounded-xl shadow-xl w-full h-[500px] object-cover transition-transform duration-500 hover:scale-[1.01]"
+            className="rounded-2xl w-full h-[400px] md:h-[520px] object-cover"
             src={harvest}
           />
+          <div className="absolute left-4 bottom-4 bg-[#140605]/85 px-3 py-2 rounded-lg backdrop-blur-[2px]">
+            <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#cca72f]">
+              Guntur · at the source
+            </span>
+          </div>
         </motion.div>
 
-        {/* Right Side: Copy Content */}
+        {/* Copy */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="space-y-6 flex flex-col items-start"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         >
-          {/* Badge */}
-          <div className="inline-block py-1 px-3 bg-[#adeec1] text-[#0e5130] rounded font-['Nunito'] font-semibold text-[12px] tracking-[0.08em] uppercase">
-            ESTABLISHED TRADITION
-          </div>
+          <SectionHeading
+            kicker="Who we are"
+            title={
+              <>
+                Guntur's red chilli, handled by people who{' '}
+                <span className="text-[#8f000d]">know the crop.</span>
+              </>
+            }
+          />
 
-          {/* Heading */}
-          <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-            Our Commitment to <span className="text-[#8f000d]">Quality</span>
-          </h2>
-
-          {/* Body Paragraphs */}
-          <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6]">
-            Minha Imports & Exports stands at the forefront of the global spice trade, specializing in the legendary Guntur Dry Red Chillies. We bridge the gap between local precision farming and international export standards.
+          <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.7] mt-6">
+            Minha works at the source — Guntur, Asia's largest chilli market — buying direct from
+            grower groups since 2013. That closeness gives us first pick of each harvest and tight
+            control over quality long before it reaches a container.
+          </p>
+          <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.7] mt-4">
+            Every lot is hand-sorted and graded to your spec — color, heat and moisture checked —
+            then shipped FSSAI, APEDA and ISO-certified. We're not just exporters; we're the partner
+            standing behind each shipment.
           </p>
 
-          <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6]">
-            Our rigorous selection process ensures that only the finest, most pungent, and color-rich chillies reach our global partners. With a legacy built on trust and a future-focused approach to logistics, we are more than just exporters—we are your strategic partners in the spice industry.
-          </p>
+          {/* Credential row */}
+          <dl className="grid grid-cols-3 gap-4 border-t border-[#1a1c1e]/10 pt-6 mt-8">
+            {credentials.map((c) => (
+              <div key={c.label}>
+                <dt className="font-['urbanist'] font-extrabold text-[#1a1c1e] text-[22px] md:text-[26px] leading-none">
+                  {c.value}
+                </dt>
+                <dd className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#8a7d7b] mt-2">
+                  {c.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
-          {/* Text CTA Link */}
           <MotionLink
             to="/about"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-block border-b-2 border-[#8f000d] text-[#8f000d] font-['urbanist'] font-semibold text-[14px] pb-1 hover:opacity-70 transition-all duration-300 focus:outline-none cursor-pointer"
+            whileHover={{ x: 3 }}
+            className="inline-flex items-center gap-2 mt-8 font-['urbanist'] font-bold text-[14px] text-[#8f000d] uppercase tracking-wider group focus:outline-none"
           >
-            Learn More About Our Legacy
+            Read our story
+            <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </MotionLink>
         </motion.div>
 

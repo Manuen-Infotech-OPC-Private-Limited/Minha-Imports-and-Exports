@@ -8,7 +8,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Deluxe (AAA)",
-    description: "Premium hand-sorted Teja S17 with long stems. Boasts high pungency, uniform bright red color, and excellent luster.",
+    description: "Our premium Teja S17 chillies with full stems. Known for their intense heat and rich red color, they are hand-sorted to ensure you get only the finest, undamaged pods.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0fuXQXlRkMikQ7R6Nzr9Kzgmy0jxWAeSpEL68CrdHCowl62Bef5VFP50Uyo3kQZZVVdaF2q6Sr0DwJzdoRVgtuwpcfRo17FsxKYWiC5izGDjZluRFQdLuv9xbdpZtI0XVVTA--YhoBD7jJLgaWJlbweKYex0TNykrjeATWN03tIgqD_QRLzcOlxgpl5QfXurYs8C7Bdq2C-buTYpiPixoX8dJ6IUpoJqyKyO4xE8nXnamQf6yO61Lw6mXo7M-cxbqmCkDKduvHJ8"
   },
   {
@@ -20,7 +20,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemcut",
     grade: "Deluxe (AAA)",
-    description: "Carefully trimmed Teja S17. Stems are cut short to optimize packaging volume while maintaining premium pod quality.",
+    description: "High-grade Teja S17 chillies with the stems neatly cut off. This allows you to pack more volume into every bag while maintaining premium quality.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0fuXQXlRkMikQ7R6Nzr9Kzgmy0jxWAeSpEL68CrdHCowl62Bef5VFP50Uyo3kQZZVVdaF2q6Sr0DwJzdoRVgtuwpcfRo17FsxKYWiC5izGDjZluRFQdLuv9xbdpZtI0XVVTA--YhoBD7jJLgaWJlbweKYex0TNykrjeATWN03tIgqD_QRLzcOlxgpl5QfXurYs8C7Bdq2C-buTYpiPixoX8dJ6IUpoJqyKyO4xE8nXnamQf6yO61Lw6mXo7M-cxbqmCkDKduvHJ8"
   },
   {
@@ -32,7 +32,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Deluxe (AAA)",
-    description: "Premium hand-destemmed Teja S17. Completely free of stems and stalks, ready for grinding and oleoresin extraction.",
+    description: "Top-tier Teja S17 chillies with all stems carefully removed. Perfect for spice grinding mills and oil extraction plants looking for pure, ready-to-use pods.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmXIAenfi-O4aUICculJkb2c_q1geKDxYKitxFEKv9tYDEzwOveyD5RzHKwfV9ieXSc324FGyYwKG-jN-kFhmH633Psk8W6m8oliB8ZwQFdEiESIKHTAZCytcJUq672sifKtvQjWFfOqZg1PzYQKFf9BDx3MAn6Tb7mXzu8v9CjDRXdcNnB6mfaQpvdVsf0Pwnw7oZV6PJWXsGHDJSKIAHuWVb0Tm-JM2VLtgXNN8g-8-U-u5GU-dGDxb8d5jpzPknAHbWwrqOIuk"
   },
   {
@@ -44,7 +44,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Best (AA)",
-    description: "Standard grade Teja S17 with stem. Offering high heat value and rich flavor at a competitive wholesale price.",
+    description: "Standard grade Teja S17 with stems. A highly reliable choice that delivers the signature strong heat and bright red color at a very practical wholesale price.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0fuXQXlRkMikQ7R6Nzr9Kzgmy0jxWAeSpEL68CrdHCowl62Bef5VFP50Uyo3kQZZVVdaF2q6Sr0DwJzdoRVgtuwpcfRo17FsxKYWiC5izGDjZluRFQdLuv9xbdpZtI0XVVTA--YhoBD7jJLgaWJlbweKYex0TNykrjeATWN03tIgqD_QRLzcOlxgpl5QfXurYs8C7Bdq2C-buTYpiPixoX8dJ6IUpoJqyKyO4xE8nXnamQf6yO61Lw6mXo7M-cxbqmCkDKduvHJ8"
   },
   {
@@ -56,7 +56,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemcut",
     grade: "Best (AA)",
-    description: "Standard grade Teja S17 with cut stems. Provides excellent pungency and optimized packing efficiency.",
+    description: "Our budget-friendly Teja S17 with cut stems. Great for buyers who want solid heat levels and need to optimize container space during shipping.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0fuXQXlRkMikQ7R6Nzr9Kzgmy0jxWAeSpEL68CrdHCowl62Bef5VFP50Uyo3kQZZVVdaF2q6Sr0DwJzdoRVgtuwpcfRo17FsxKYWiC5izGDjZluRFQdLuv9xbdpZtI0XVVTA--YhoBD7jJLgaWJlbweKYex0TNykrjeATWN03tIgqD_QRLzcOlxgpl5QfXurYs8C7Bdq2C-buTYpiPixoX8dJ6IUpoJqyKyO4xE8nXnamQf6yO61Lw6mXo7M-cxbqmCkDKduvHJ8"
   },
   {
@@ -68,7 +68,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Best (AA)",
-    description: "Wholesale grade stemless Teja S17. Hand-cleaned to remove stalks, ideal for commercial spice processors.",
+    description: "Clean, stemless Teja S17 chillies. Hand-sorted to remove stems, making them a ready-to-mill option for wholesale spice manufacturers.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmXIAenfi-O4aUICculJkb2c_q1geKDxYKitxFEKv9tYDEzwOveyD5RzHKwfV9ieXSc324FGyYwKG-jN-kFhmH633Psk8W6m8oliB8ZwQFdEiESIKHTAZCytcJUq672sifKtvQjWFfOqZg1PzYQKFf9BDx3MAn6Tb7mXzu8v9CjDRXdcNnB6mfaQpvdVsf0Pwnw7oZV6PJWXsGHDJSKIAHuWVb0Tm-JM2VLtgXNN8g-8-U-u5GU-dGDxb8d5jpzPknAHbWwrqOIuk"
   },
   {
@@ -80,7 +80,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Deluxe (AAA)",
-    description: "Premium Guntur Sannam S4 variety with stem. Selected for thick skins, moderate heat, and brilliant red appearance.",
+    description: "The famous Guntur Sannam S4 dry red chillies with stems. These feature thick skin, medium heat, and a bold red look that is highly popular in world markets.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -92,7 +92,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Deluxe (AAA)",
-    description: "Top-tier S4 Guntur Sannam without stems. Manually destemmed, preserving clean pods for blending and packaging.",
+    description: "Premium Guntur Sannam S4 chillies without stems. Hand-cleaned and graded to ensure clean, consistent pods for food processing and retail packing.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -104,7 +104,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Best (AA)",
-    description: "Standard trade quality S4 Guntur Sannam with stem. Excellent value for regular commercial grinding.",
+    description: "Reliable Guntur Sannam S4 with stems. An excellent everyday choice for commercial grinding, offering good flavor and medium spice levels.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -116,7 +116,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Best (AA)",
-    description: "Destemmed S4 Guntur Sannam, standard grade. Cost-effective and ready for pulverization in spice mills.",
+    description: "Standard stemless Guntur Sannam S4 chillies. A cost-effective, ready-to-grind option for making bulk spice powders and food seasonings.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -128,7 +128,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Standard (A/AA)",
-    description: "S10 variety with stem intact. Offers a mild heat footprint combined with deep red pigmentation for balanced blends.",
+    description: "Mild S10 chillies with stems. These have a gentle heat level and a beautiful deep red color, making them perfect for milder curry powders.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz2O0Bku-uk1bIOLFsFezwkTk5kKyMeZbSuxeXTXF--b-6-CimtTXBKga8abM8zNGJindfw-M9BclCuLU9jsmB-1jkM83e-lejWE3pum_MTSihb_ebDcpotQUFq4ki1J8sw-BWRW7pOHPyFDRWazhdirUVX0F67s_5li3HSDFd3CsryW6zcFn7pk_ZWTx_8er_A-A2xi-JAJbCEyLovmwG9uRvba0KKcOvXUMlzFsaa5FlF3v1L0n3MgltJXI8TIw-sVG7Brk9SPQ"
   },
   {
@@ -140,7 +140,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Standard (A/AA)",
-    description: "Stem-free S10 pods. Provides bright red color values and mild heat, highly suitable for generic seasoning powders.",
+    description: "Stemless S10 chillies offering a mild kick. Ready to be blended directly into seasoning mixes and food products that need color without heavy heat.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz2O0Bku-uk1bIOLFsFezwkTk5kKyMeZbSuxeXTXF--b-6-CimtTXBKga8abM8zNGJindfw-M9BclCuLU9jsmB-1jkM83e-lejWE3pum_MTSihb_ebDcpotQUFq4ki1J8sw-BWRW7pOHPyFDRWazhdirUVX0F67s_5li3HSDFd3CsryW6zcFn7pk_ZWTx_8er_A-A2xi-JAJbCEyLovmwG9uRvba0KKcOvXUMlzFsaa5FlF3v1L0n3MgltJXI8TIw-sVG7Brk9SPQ"
   },
   {
@@ -152,7 +152,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Premium (AAA)",
-    description: "Premium Byadgi chillies with stem. Characterized by deeply shrivelled pods, low heat, and exceptionally high ASTA color values.",
+    description: "Genuine, premium Byadgi chillies with stems. Famous for their deep red color and deeply wrinkled skin, they add color without the heat.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIJM05ZKKYd-qGdlyk3j27bbuqrAYgNo_-T4q2qTCh_04YIEr67iAbnzrTqGnd7f5LHFvXSkYU8fomakHPZbfpyBkp8WlabOY2dKfE73S8H_g31Y-xZ2JYdAyUjLnS40k698ghnUn1aV3pk2dr__6or6khaNV0GcwlbAscAjEJYLfxD8cvxOt1OtPbofxoMZj87urg_kNj1QzBmR_5OuueEc-8yO4wT39IHIKPc2rWjhq9keJ83Ti79a2yp0iq1WW0u7n30F5nxFU"
   },
   {
@@ -164,7 +164,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Premium (AAA)",
-    description: "Premium destemmed Byadgi. Shrivelled pods delivering intense natural red color with minimal pungency, ideal for food coloring.",
+    description: "Hand-cleaned stemless Byadgi chillies. These highly shrivelled pods are perfect for extracting natural red color or making mild red food pastes.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIJM05ZKKYd-qGdlyk3j27bbuqrAYgNo_-T4q2qTCh_04YIEr67iAbnzrTqGnd7f5LHFvXSkYU8fomakHPZbfpyBkp8WlabOY2dKfE73S8H_g31Y-xZ2JYdAyUjLnS40k698ghnUn1aV3pk2dr__6or6khaNV0GcwlbAscAjEJYLfxD8cvxOt1OtPbofxoMZj87urg_kNj1QzBmR_5OuueEc-8yO4wT39IHIKPc2rWjhq9keJ83Ti79a2yp0iq1WW0u7n30F5nxFU"
   },
   {
@@ -176,7 +176,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem / Stemless",
     grade: "Premium (AAA)",
-    description: "Popular Guntur variety. High demand in international markets for its rich red color and medium-heat pungency, ideal for general spice grinding.",
+    description: "A popular Guntur variety known for its bright red color and medium heat. Highly demanded by international buyers for everyday spice blends.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -188,7 +188,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Standard (A/AA)",
-    description: "Export-quality C5/No. 5 dry red chilli. Features medium-to-high pungency and a rich red appearance, widely used in commercial spice manufacturing.",
+    description: "Export-grade C5 chillies with stems. They offer a great balance of medium heat and rich red color, making them popular for bulk seasonings.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -200,7 +200,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Premium (AAA)",
-    description: "Robust Armoor variety dry red chilli. Known for its strong, distinctive aroma and medium pungency, highly favored in South Indian traditional recipes.",
+    description: "Robust Armoor chillies featuring a thick skin and a deep, strong flavor profile. Extremely popular for traditional curry powder mixes.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -212,7 +212,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem / Stemless",
     grade: "Deluxe (AAA)",
-    description: "Devonur Deluxe (DD) is a high-grade chilli offering premium visual appeal, bright crimson skins, and a well-balanced spice profile.",
+    description: "High-quality DD chillies. Known for their clean crimson skin and a smooth, mild heat that is highly versatile for cooking.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -224,7 +224,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Fatki / Talas (B/C)",
-    description: "Hand-sorted Teja Fatki. Features high heat and spice extract value at a budget-friendly wholesale price, ideal for industrial extraction.",
+    description: "Economy-grade Teja Fatki. Ideal for extraction labs looking for high heat levels at a highly competitive budget.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0fuXQXlRkMikQ7R6Nzr9Kzgmy0jxWAeSpEL68CrdHCowl62Bef5VFP50Uyo3kQZZVVdaF2q6Sr0DwJzdoRVgtuwpcfRo17FsxKYWiC5izGDjZluRFQdLuv9xbdpZtI0XVVTA--YhoBD7jJLgaWJlbweKYex0TNykrjeATWN03tIgqD_QRLzcOlxgpl5QfXurYs8C7Bdq2C-buTYpiPixoX8dJ6IUpoJqyKyO4xE8nXnamQf6yO61Lw6mXo7M-cxbqmCkDKduvHJ8"
   },
   {
@@ -236,7 +236,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Fatki / Talas (B/C)",
-    description: "Economy-grade discolored pods and husks of Sannam 334 / S10 varieties. Mostly used for mass industrial grinding and extraction.",
+    description: "Value-grade S10/Sannam Fatki chillies. A practical option for mass grinding, providing decent color and spice at lower costs.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0fuXQXlRkMikQ7R6Nzr9Kzgmy0jxWAeSpEL68CrdHCowl62Bef5VFP50Uyo3kQZZVVdaF2q6Sr0DwJzdoRVgtuwpcfRo17FsxKYWiC5izGDjZluRFQdLuv9xbdpZtI0XVVTA--YhoBD7jJLgaWJlbweKYex0TNykrjeATWN03tIgqD_QRLzcOlxgpl5QfXurYs8C7Bdq2C-buTYpiPixoX8dJ6IUpoJqyKyO4xE8nXnamQf6yO61Lw6mXo7M-cxbqmCkDKduvHJ8"
   },
   {
@@ -248,7 +248,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Premium (AAA)",
-    description: "Short, thick, highly pungent Bullet chilli. A unique variety featuring intense heat with low seed count, perfect for premium packaging.",
+    description: "Short, plump Bullet chillies. These pack a very strong heat kick with a low seed count, making them a premium addition to spice lines.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -260,7 +260,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Standard (A/AA)",
-    description: "Export-quality 26 dry red chilli. Offers steady moisture compliance, standard skin thickness, and a very reliable general pungency rating.",
+    description: "Reliable 26 dry red chillies. Well-dried pods with a standard spice level, making them a steady choice for daily food production.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -272,7 +272,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem / Stemless",
     grade: "Premium (AAA)",
-    description: "Enhanced S10 hybrid selection. Known as Super 10 due to its long pods, rich red luster, and highly consistent moderate heat value.",
+    description: "Enhanced Super 10 chillies featuring long, bright red pods and a steady, pleasant medium heat that is highly consistent.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -284,7 +284,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Super Deluxe (A+)",
-    description: "Premium Bangaram (Gold) selection. Hand-sorted A-grade pods featuring vibrant golden-red hues, high oil content, and very low-to-moderate pungency.",
+    description: "Gold-grade Bangaram chillies. These display a gorgeous golden-red hue and very low heat, perfect for delicate spice blends.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -296,7 +296,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Standard (A/AA)",
-    description: "Thick-skinned Shark dry red chilli variety. Features high seed counts and strong pungency retention during shipping, making it highly requested for grinding.",
+    description: "Thick-skinned Shark chillies with a high seed count. They offer strong heat and bold flavor, making them ideal for heavy spice grinding.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -308,7 +308,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem / Stemless",
     grade: "Best (AA)",
-    description: "Standard general-purpose Classic red chilli. Highly versatile for domestic food services and wholesale packing distributors.",
+    description: "General-purpose Classic red chillies. A great all-rounder for commercial kitchens, catering, and daily food services.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -320,7 +320,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Standard (A/AA)",
-    description: "Clean-sorted Romi 26 dry red chilli. Features strong pod durability, standard seeds count, and reliable export-standard pungency levels.",
+    description: "Durable Romi 26 chillies. These pods hold up well during transport and deliver a reliable, standard spice level.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -332,7 +332,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem / Stemless",
     grade: "Premium (AAA)",
-    description: "High-value Syngenta 5531 hybrid Byadgi. Famous for its deeply shrivelled pods, low heat profile, and incredibly rich natural crimson coloring.",
+    description: "Premium Syngenta 5531 Byadgi hybrid. Deeply wrinkled skin, very low heat, and an incredibly rich red color.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIJM05ZKKYd-qGdlyk3j27bbuqrAYgNo_-T4q2qTCh_04YIEr67iAbnzrTqGnd7f5LHFvXSkYU8fomakHPZbfpyBkp8WlabOY2dKfE73S8H_g31Y-xZ2JYdAyUjLnS40k698ghnUn1aV3pk2dr__6or6khaNV0GcwlbAscAjEJYLfxD8cvxOt1OtPbofxoMZj87urg_kNj1QzBmR_5OuueEc-8yO4wT39IHIKPc2rWjhq9keJ83Ti79a2yp0iq1WW0u7n30F5nxFU"
   },
   {
@@ -344,7 +344,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Premium (AAA)",
-    description: "Standard Byadgi 335 selection. Deeply shrivelled pods offering mild spice and rich coloring values, heavily used in spice oil and food coloring extraction.",
+    description: "Standard Byadgi 335 chillies. Shrivelled pods with a mild flavor and high color levels, perfect for extracting natural red oils.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIJM05ZKKYd-qGdlyk3j27bbuqrAYgNo_-T4q2qTCh_04YIEr67iAbnzrTqGnd7f5LHFvXSkYU8fomakHPZbfpyBkp8WlabOY2dKfE73S8H_g31Y-xZ2JYdAyUjLnS40k698ghnUn1aV3pk2dr__6or6khaNV0GcwlbAscAjEJYLfxD8cvxOt1OtPbofxoMZj87urg_kNj1QzBmR_5OuueEc-8yO4wT39IHIKPc2rWjhq9keJ83Ti79a2yp0iq1WW0u7n30F5nxFU"
   },
   {
@@ -356,7 +356,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Standard (A/AA)",
-    description: "ENDO 5 variety dry red chilli. Features moderate heat and uniform red appearance, perfect for general culinary powders and industrial processing.",
+    description: "Uniform ENDO 5 chillies. Offers steady medium heat and uniform red color, making them a popular base for general food processing.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVK_QZtSZ3OM9hf9u4ZtAU2E4kacKuM5CzmtoK2nLmoVbz8wDd_oa9z5VklaBFal0og_lOs34nn6ySWz5v0suvC0WeV25tMrDaQmVD5HeH2NO6CLhZSsjc5waIq3gNQsLrStJbL5JR4W0wJY-phW6UHh8x9LtRjFdKZFQpUhWJSKQ21ulOKy08DLJOriDnTvf3s67LNk83EB9jOxzYL7WL3CE75q7rqValchEu0SeEKfRnxYY4XqtmiKxYuxZAANNTj8Mt2bTb0A0"
   },
   {
@@ -368,7 +368,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "Stemless",
     grade: "Super Deluxe (A+)",
-    description: "Authentic Kashmiri dry red chilli. Internationally celebrated for giving dishes a brilliant red color with minimal heat intensity.",
+    description: "Kashmiri dry red chillies. Known for their deep wrinkled skin and bright crimson color, they give food a rich red look without burning.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIJM05ZKKYd-qGdlyk3j27bbuqrAYgNo_-T4q2qTCh_04YIEr67iAbnzrTqGnd7f5LHFvXSkYU8fomakHPZbfpyBkp8WlabOY2dKfE73S8H_g31Y-xZ2JYdAyUjLnS40k698ghnUn1aV3pk2dr__6or6khaNV0GcwlbAscAjEJYLfxD8cvxOt1OtPbofxoMZj87urg_kNj1QzBmR_5OuueEc-8yO4wT39IHIKPc2rWjhq9keJ83Ti79a2yp0iq1WW0u7n30F5nxFU"
   },
   {
@@ -380,7 +380,7 @@ export const chilliVarieties = [
     moisture: "< 12%",
     stemType: "With Stem",
     grade: "Premium (AAA)",
-    description: "Wrinkle 273 hybrid. Offers a shrivelled appearance, rich ASTA coloring, and a mild spice kick that appeals to global culinary processors.",
+    description: "Wrinkle 273 hybrid chillies. Features a shrunken skin, rich red color, and a pleasant, mild spice level.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIJM05ZKKYd-qGdlyk3j27bbuqrAYgNo_-T4q2qTCh_04YIEr67iAbnzrTqGnd7f5LHFvXSkYU8fomakHPZbfpyBkp8WlabOY2dKfE73S8H_g31Y-xZ2JYdAyUjLnS40k698ghnUn1aV3pk2dr__6or6khaNV0GcwlbAscAjEJYLfxD8cvxOt1OtPbofxoMZj87urg_kNj1QzBmR_5OuueEc-8yO4wT39IHIKPc2rWjhq9keJ83Ti79a2yp0iq1WW0u7n30F5nxFU"
   }
 ];

@@ -13,7 +13,8 @@ import {
   FiLayers,
   FiTruck,
   FiChevronLeft,
-  FiChevronRight
+  FiChevronRight,
+  FiArrowRight
 } from 'react-icons/fi';
 import cooDavidChen from '../assets/coo_david_chen.png';
 import aboutHeroBg from '../assets/about_hero_bg.png';
@@ -24,6 +25,7 @@ import founder1 from '../assets/founder1.png';
 import founder2 from '../assets/founder2.png';
 import CountUp from '../components/common/CountUp';
 import useStageProgress from '../hooks/useStageProgress';
+import SectionHeading from '../components/common/SectionHeading';
 
 const OdometerYear = ({ year, color }) => {
   const digits = year.split('');
@@ -92,87 +94,13 @@ const AboutCompany = () => {
   }, []);
 
 
-  const regionalTradeDetails = [
-    {
-      id: 'asia',
-      name: 'Asia & SE Asia',
-      countries: ['China', 'Vietnam', 'Thailand', 'Indonesia', 'Malaysia', 'Sri Lanka'],
-      ports: ['Shanghai', 'Haiphong', 'Bangkok', 'Jakarta', 'Port Klang', 'Colombo'],
-      transitTime: '8 - 14 Days',
-      certifications: ['Phytosanitary Cert', 'FSSAI Approved', 'ISO 22000'],
-      stats: '80+ Containers / Yr',
-      accentColor: '#8f000d',
-      markerCoordinates: [
-        { top: '48%', left: '72%' },
-        { top: '56%', left: '75%' },
-        { top: '60%', left: '72%' },
-        { top: '68%', left: '76%' },
-        { top: '64%', left: '74%' },
-        { top: '62%', left: '65%' },
-      ]
-    },
-    {
-      id: 'middle-east',
-      name: 'Middle East',
-      countries: ['UAE', 'Saudi Arabia', 'Oman', 'Qatar', 'Kuwait', 'Jordan'],
-      ports: ['Jebel Ali (Dubai)', 'Jeddah', 'Sohar', 'Hamad (Doha)', 'Shuwaikh', 'Aqaba'],
-      transitTime: '5 - 10 Days',
-      certifications: ['Halal Certified', 'SABER Compliance', 'Phytosanitary Cert'],
-      stats: '60+ Containers / Yr',
-      accentColor: '#2c6a46',
-      markerCoordinates: [
-        { top: '50%', left: '56%' },
-        { top: '52%', left: '50%' },
-        { top: '53%', left: '57%' },
-        { top: '49%', left: '55%' },
-        { top: '47%', left: '53%' },
-        { top: '45%', left: '48%' },
-      ]
-    },
-    {
-      id: 'europe',
-      name: 'Europe',
-      countries: ['United Kingdom', 'Germany', 'Netherlands', 'Poland', 'Spain', 'Italy'],
-      ports: ['Felixstowe', 'Hamburg', 'Rotterdam', 'Gdansk', 'Valencia', 'Genoa'],
-      transitTime: '22 - 28 Days',
-      certifications: ['BRC Food Standard', 'Eurofins Lab Reports', 'Aflatoxin-Free Cert'],
-      stats: '40+ Containers / Yr',
-      accentColor: '#cca72f',
-      markerCoordinates: [
-        { top: '28%', left: '38%' },
-        { top: '30%', left: '43%' },
-        { top: '29%', left: '41%' },
-        { top: '29%', left: '46%' },
-        { top: '38%', left: '37%' },
-        { top: '36%', left: '42%' },
-      ]
-    },
-    {
-      id: 'americas',
-      name: 'Americas',
-      countries: ['United States', 'Canada', 'Mexico', 'Brazil'],
-      ports: ['New York', 'Los Angeles', 'Vancouver', 'Manzanillo', 'Santos'],
-      transitTime: '30 - 38 Days',
-      certifications: ['FDA Registered', 'USDA Organic Compliance', 'ASTA Grade Analysis'],
-      stats: '30+ Containers / Yr',
-      accentColor: '#8f000d',
-      markerCoordinates: [
-        { top: '35%', left: '16%' },
-        { top: '38%', left: '8%' },
-        { top: '28%', left: '12%' },
-        { top: '46%', left: '13%' },
-        { top: '65%', left: '28%' },
-      ]
-    }
-  ];
-
   const values = [
     {
       id: 'integrity',
       num: '01',
       title: 'Integrity',
       icon: <FiShield className="text-2xl" />,
-      desc: 'Honest dealings and transparent communication are the foundation of our business relations. We align our operations with absolute transparency, honesty, and reliable ethics.',
+      desc: 'We believe that trust is built through honesty and transparency. We always communicate openly and do business with fairness and strong ethical values.',
       accentColor: '#8f000d',
     },
     {
@@ -180,7 +108,7 @@ const AboutCompany = () => {
       num: '02',
       title: 'Quality',
       icon: <FiCheckCircle className="text-2xl" />,
-      desc: 'We never settle for second best. Every chilli exported is a testament to our strict Guntur grade standards, ensuring premium color, heat, moisture, and ASTA compliance.',
+      desc: 'Quality is at the heart of everything we do. Every batch of chilli is carefully selected and processed to meet high standards for color, spice level, freshness, and export quality.',
       accentColor: '#2c6a46',
     },
     {
@@ -188,7 +116,7 @@ const AboutCompany = () => {
       num: '03',
       title: 'Customer Commitment',
       icon: <FiHeart className="text-2xl" />,
-      desc: 'Your satisfaction is our priority, from the first export inquiry to the final delivery at your destination port, building relationships that last generations.',
+      desc: 'Our customers always come first. From your first inquiry to the final delivery, we provide reliable service and support to build long-lasting partnerships.',
       accentColor: '#cca72f',
     },
     {
@@ -196,7 +124,7 @@ const AboutCompany = () => {
       num: '04',
       title: 'Transparency',
       icon: <FiEye className="text-2xl" />,
-      desc: 'Full seed-to-shipment traceability, giving you absolute confidence in the origin, grading, and chemical safety levels of our spice products.',
+      desc: 'We believe in keeping our customers informed. Every product can be traced from the farm to the final shipment, giving you confidence in its quality and safety.',
       accentColor: '#8f000d',
     },
     {
@@ -204,7 +132,7 @@ const AboutCompany = () => {
       num: '05',
       title: 'Sustainability',
       icon: <FiActivity className="text-2xl" />,
-      desc: 'Promoting sustainable farming practices that preserve rich Guntur soil, optimize water usage, and support our local agricultural partners.',
+      desc: 'We support farming practices that protect the environment, make better use of natural resources, and help our farming communities grow for the future.',
       accentColor: '#2c6a46',
     },
     {
@@ -212,7 +140,7 @@ const AboutCompany = () => {
       num: '06',
       title: 'Global Standards',
       icon: <FiGlobe className="text-2xl" />,
-      desc: 'Adhering to international safety, phytosanitary, and quality benchmarks (including ASTA, FDA, ISO, and BRC) across all our export destinations.',
+      desc: 'We follow international food safety and quality standards to ensure our products meet the requirements of customers across the world.',
       accentColor: '#cca72f',
     }
   ];
@@ -223,28 +151,44 @@ const AboutCompany = () => {
       label: 'Our Mission',
       icon: <FiTarget className="text-xl" />,
       tagline: 'Customer Sourcing Focus',
-      content: "We believe that a satisfied customer is the best business strategy. Hence, the mission of Minha Imports and Exports Pvt Ltd is to always deliver high quality products according to the buyers’ specifications. We do this by sourcing, processing and delivering spices in an economically efficient and quality consistent way. We are constantly working to create great value for our customers within a dynamic and enjoyable ambiance."
+      content: (
+        <>
+          At Minha Imports & Exports, we believe that our customers are at the heart of everything we do. Our goal is to deliver high-quality products that meet each customer's needs and expectations. From sourcing the finest spices to processing and delivering them with care, we focus on maintaining consistent quality at every step. We are committed to building long-term relationships by offering reliable products, excellent service, and value our customers can trust.
+        </>
+      )
     },
     {
       id: 'policy',
       label: 'Protect & Produce Policy',
       icon: <FiActivity className="text-xl" />,
       tagline: 'Quality Standards Frame',
-      content: "We share our knowledge and experience to optimize our and our customers’ performance. We follow PROTECT & PRODUCE POLICY to have best outputs and same to serve in the GLOBAL market. Our promise is to always deliver products made from the best resources, the latest technology and the best practices."
+      content: (
+        <>
+          We believe in growing together with our customers by sharing our knowledge and experience. Our <strong className="font-extrabold text-white">Protect & Produce</strong> approach helps us maintain high-quality standards at every stage. By using the best raw materials, modern technology, and trusted processing methods, we ensure that every product is made with care and delivered to meet the needs of customers around the world.
+        </>
+      )
     },
     {
       id: 'security',
       label: 'Supply Security',
       icon: <FiShield className="text-xl" />,
       tagline: 'Food Safety Framework',
-      content: "We secure an uninterrupted supply of authentic, natural and food safe spices. Our staff consists of an experienced team of professionals who work with care, passion and professionalism."
+      content: (
+        <>
+          We are committed to providing a steady supply of natural, safe, and high-quality spices to our customers. Our experienced team works with care, dedication, and attention to detail at every stage, ensuring that every product meets the highest quality standards before it reaches customers around the world.
+        </>
+      )
     },
     {
       id: 'commitment',
       label: 'Commitment',
       icon: <FiHeart className="text-xl" />,
       tagline: 'Socio-Environmental Pledge',
-      content: "We are accountable to the customers we serve, to the employees we work with, and to the environment in which we exist. MINHA honours its commitments to all of the above, and works symbiotically with them, pledging to give back more than what it takes."
+      content: (
+        <>
+          We believe in being responsible to our customers, our employees, and the environment. At Minha Imports & Exports, we keep our promises, build strong relationships based on trust, and work in a way that supports sustainable growth. Our goal is to create lasting value while giving back to the people and communities we work with.
+        </>
+      )
     }
   ];
 
@@ -253,7 +197,7 @@ const AboutCompany = () => {
       year: '2013',
       title: 'Export Origins',
       subtitle: 'Started with export focus',
-      desc: 'Minha began as an export-first business, helping Guntur growers reach overseas markets with premium dry red chillies and building its initial export partner base.',
+      desc: 'Minha Imports & Exports started with a simple goal—to connect Guntur\'s finest chillies with customers around the world. By working closely with local farmers and supplying premium dry red chillies, we built strong relationships with our first global export partners.',
       tag: 'Export Launch',
       accent: '#8f000d',
     },
@@ -343,7 +287,7 @@ const AboutCompany = () => {
             <span className="text-white whitespace-normal text-center">Our Company</span>
           </nav>
           <h1 className="font-['urbanist'] font-bold text-[36px] sm:text-[46px] md:text-[56px] leading-[1.1] tracking-tight text-white">
-            About Minha <br className="hidden md:block" />Imports & Exports
+            About Minha
           </h1>
           <p className="font-['Nunito'] font-semibold text-white/85 text-[16px] sm:text-[18px] md:text-[20px] max-w-2xl mx-auto leading-relaxed">
             Delivering Quality, Trust, and Excellence in Global Chilli Exports. We bridge the gap between local agricultural excellence and international demand.
@@ -375,17 +319,26 @@ const AboutCompany = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-left space-y-6"
           >
-            <div>
-              <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">A Legacy of Precision & Pure Spices</h2>
-            </div>
+            <SectionHeading
+              align="left"
+              kicker="Our story"
+              title={
+                <>
+                  A legacy of precision and <span className="text-[#8f000d]">pure spices</span>
+                </>
+              }
+              className="mb-4"
+              showLeftLine={true}
+              showRightLine={false}
+            />
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-              Minha Imports & Exports stands at the forefront of the Guntur dry red chilli trade, bridging the gap between local farming legacies and global food supply networks. Our operations are deeply integrated within Guntur, Asia's largest spice marketplace, allowing us to build direct collaborations with trusted local growers since 2013 and secure early-harvest access to premium crops.
+              Minha Imports & Exports has been connecting the rich chilli farms of Guntur with customers around the world since 2013. Being located in Guntur, one of Asia's largest spice markets, helps us work closely with trusted farmers and source the best-quality chillies during every harvest season.
             </p>
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-              We maintain a rigorous quality assurance protocol where our experienced team meticulously handpicks red chillies, discarding discolored, broken, or low-pungency pods. By ensuring tight control over raw materials, keeping moisture content strictly below 11% to prevent mold formation during long ocean transits, and sorting for uniform dimensions, we deliver a consistent product quality tailored to international market standards.
+              Our quality journey begins with carefully selecting each batch of chillies. Our experienced team removes damaged, discolored, and low-quality chillies to ensure only the best are processed. We also maintain the right moisture levels and sort the chillies by size to keep the quality consistent and fresh, even during long-distance shipping.
             </p>
             <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.6] text-justify">
-              By maintaining certifications with FSSAI, APEDA, and ISO, we ensure complete transparency in export standards. Guided by our prime motto of absolute customer service, we guarantee timely B2B logistics and custom documentation support for every global shipment.
+              We follow strict quality and export standards with certifications from FSSAI, APEDA, and ISO. Along with supplying premium products, we provide reliable shipping, complete export documentation, and dedicated customer support, making every shipment smooth and hassle-free for our global partners.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <a
@@ -411,13 +364,18 @@ const AboutCompany = () => {
       <section className="py-10 md:py-14 bg-surface-container-low overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-          <div className="text-center mb-10">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Our Foundation</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">Mission, Policy & Commitment</h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] mt-4 max-w-2xl mx-auto">
-              Discover our core frameworks, standards, and values that guide every export transaction and operational process.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Our foundation"
+            title={
+              <>
+                Mission, policy and <span className="text-[#8f000d]">commitment</span>
+              </>
+            }
+            intro="Discover our core frameworks, standards, and values that guide every export transaction and operational process."
+            className="mb-10"
+            showRightLine={true}
+          />
 
           {/* Immersive Img Card Container */}
           <div className="relative w-full min-h-[520px] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-neutral-800 bg-neutral-950">
@@ -529,37 +487,26 @@ const AboutCompany = () => {
         </div>
 
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
-
-          {/* Header */}
-          <div className="max-w-3xl mb-10">
-
-            <span className="font-['urbanist'] font-bold uppercase tracking-[0.22em] text-[11px] text-[#8f000d]">
-              The Minha Way
-            </span>
-
-            <h2 className="mt-2 font-['urbanist'] font-bold text-[32px] md:text-[38px] text-[#1a1c1e] leading-tight">
-              Core Values That Drive Us
-            </h2>
-
-            <div className="w-16 h-[2px] bg-[#C8A96A] mt-4 mb-4" />
-
-            <p className="font-['Nunito'] text-[15px] md:text-[16px] leading-7 text-[#5a403e] max-w-2xl">
-              Our operational principles define every relationship we build—from farmers
-              and suppliers to customers across global markets.
-            </p>
-
-          </div>
-
+          <SectionHeading
+            align="left"
+            kicker="The Minha way"
+            title={
+              <>
+                Core values that <span className="text-[#8f000d]">drive us</span>
+              </>
+            }
+            intro="Our values guide every relationship we build—from the farmers we work with to the customers we serve across the world. We believe in creating lasting partnerships based on trust, quality, and mutual growth."
+            className="mb-10"
+            showLeftLine={true}
+            showRightLine={false}
+          />
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
-
             {values.map((val) => (
-
               <div
                 key={val.id}
                 className="group border-neutral-200 rounded-xl p-7 md:p-8 transition-all duration-300 hover:bg-[#FFFDF9] hover:border-neutral-300 hover:shadow-[0_16px_35px_-24px_rgba(0,0,0,0.12)]"
               >
-
                 {/* Accent Bar */}
                 <div
                   className="w-10 h-[3px] rounded-full mb-5"
@@ -567,7 +514,6 @@ const AboutCompany = () => {
                     backgroundColor: val.accentColor,
                   }}
                 />
-
                 {/* Icon */}
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center mb-5 transition-colors duration-300"
@@ -578,7 +524,6 @@ const AboutCompany = () => {
                 >
                   {val.icon}
                 </div>
-
                 {/* Title */}
                 <h4
                   className="font-['urbanist'] font-bold text-[20px] mb-3 leading-tight transition-colors duration-300"
@@ -594,15 +539,12 @@ const AboutCompany = () => {
                 >
                   {val.title}
                 </h4>
-
                 {/* Description */}
                 <p className="font-['Nunito'] text-[14px] leading-6 text-[#5f5b58] mb-6">
                   {val.desc}
                 </p>
-
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-
                   <span
                     className="font-['urbanist'] font-semibold text-[12px] uppercase tracking-[0.16em]"
                     style={{
@@ -611,21 +553,14 @@ const AboutCompany = () => {
                   >
                     Principle
                   </span>
-
                   <span className="font-['urbanist'] text-neutral-300 font-bold text-base">
                     {val.num}
                   </span>
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
       {/* 5. Journey Timeline - Interactive Horizontal Slider */}
@@ -643,19 +578,18 @@ const AboutCompany = () => {
             }
           `}</style>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Our Evolution</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">Our Journey & Milestones</h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] mt-4 max-w-2xl mx-auto">
-              Tracing the progress of Minha Imports & Exports from our founding roots to our current global presence.
-            </p>
-          </motion.div>
+          <SectionHeading
+            align="center"
+            kicker="Our evolution"
+            title={
+              <>
+                Our journey and <span className="text-[#8f000d]">milestones</span>
+              </>
+            }
+            intro="Follow the journey of Minha Imports & Exports, from our humble beginnings to becoming a trusted exporter serving customers across the globe."
+            className="mb-10"
+            showRightLine={true}
+          />
 
           {/* Progress Wavy Track for Desktop / Tablet (screens >= md) */}
           <div className="hidden md:block relative w-full max-w-3xl mx-auto h-[140px] mb-8 mt-12 select-none">
@@ -847,13 +781,18 @@ const AboutCompany = () => {
       {/* 6. Leadership & Management */}
       <section className="py-10 md:py-14 bg-surface">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
-          <div className="text-center mb-10">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Leadership & Management</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">Leadership & Visionary Management</h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] mt-4 max-w-2xl mx-auto">
-              Guided by decades of experience in international trade, corporate relations, and agricultural excellence.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Leadership"
+            title={
+              <>
+                Leadership and visionary <span className="text-[#8f000d]">management</span>
+              </>
+            }
+            intro="Driven by years of experience in international trade, strong business relationships, and a commitment to delivering high-quality agricultural products."
+            className="mb-10"
+            showRightLine={true}
+          />
 
           {/* Founders Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
@@ -917,15 +856,18 @@ const AboutCompany = () => {
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
 
           {/* Header */}
-          <div className="text-center mb-10 max-w-3xl mx-auto">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Global Sourcing & Supply</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Our International Trade Network
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] mt-4">
-              Operating directly from Guntur, India (the heart of the spice trade), Minha exports premium graded red chillies to global ports, ensuring strict compliance with international phytosanitary, pesticide, and ASTA guidelines.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Global supply"
+            title={
+              <>
+                Our international <span className="text-[#8f000d]">trade network</span>
+              </>
+            }
+            intro="Based in Guntur, the heart of India's spice trade, Minha Imports & Exports supplies premium-quality red chillies to customers around the world. Every shipment is carefully prepared to meet international quality and export standards."
+            className="mb-10"
+            showRightLine={true}
+          />
 
           {/* Large Dashboard Map Panel */}
           <div className="max-w-[1100px] mx-auto bg-white rounded-[2rem] border border-neutral-100/80 shadow-premium-soft p-6 md:p-10 relative overflow-hidden flex flex-col items-center">
@@ -1013,16 +955,18 @@ const AboutCompany = () => {
       <section className="py-10 md:py-14 bg-surface border-t border-neutral-100 overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-          {/* Header */}
-          <div className="text-center mb-10">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-3">Why Partner With Us</span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Our Simple Three-Step Process
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6] mt-4 max-w-xl mx-auto">
-              We make it easy for global businesses to source premium red chillies from India with stable prices, clean quality, and fast shipping.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Our process"
+            title={
+              <>
+                Our simple three-step <span className="text-[#8f000d]">process</span>
+              </>
+            }
+            intro="We make it easy for global businesses to source premium red chillies from India with stable prices, clean quality, and fast shipping."
+            className="mb-10"
+            showRightLine={true}
+          />
 
           {/* Pipeline Container */}
           <div className="relative w-full">
@@ -1218,34 +1162,28 @@ const AboutCompany = () => {
 
             {/* Left Column: Brand Quote (lg:col-span-5) */}
             <div className="relative space-y-4 text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8 xl:pr-12 lg:col-span-5 w-full z-10">
-              <span className="absolute -top-10 -left-2 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                “
-              </span>
-              <blockquote className="font-['urbanist'] font-medium italic text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 relative z-10">
-                "Our story began in the fertile lands of Guntur with a simple belief—that the finest harvest deserves a place on the global stage. Today, every shipment we send carries the dedication of our farmers, the trust of our partners, and our promise of uncompromising quality."
-              </blockquote>
-              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-[#cca72f] relative z-10">
+              <SectionHeading
+                align="left"
+                tone="light"
+                kicker="Our story"
+                kickerColor="#cca72f"
+                title="Our sourcing promise"
+                intro="Our story began in the fertile lands of Guntur with a simple belief—that the finest harvest deserves a place on the global stage. Today, every shipment carries the dedication of our farmers, the trust of our partners, and our promise of quality."
+                className="mb-0"
+                showLeftLine={true}
+                showRightLine={false}
+              />
+              <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-white/40 relative z-10 mt-2">
                 — The Minha Board of Directors
               </div>
-              <span className="absolute -bottom-14 right-4 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                ”
-              </span>
             </div>
 
             {/* Right Column: CTA Content (lg:col-span-7) */}
             <div className="space-y-5 text-center lg:text-left lg:col-span-7 w-full">
 
-              {/* Tagline Badge */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto lg:mx-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#cca72f] animate-pulse" />
-                <span className="font-['urbanist'] font-bold text-[8.5px] tracking-[0.2em] text-[#cca72f] uppercase">
-                  Direct Export Cargo Sourcing
-                </span>
-              </div>
-
               {/* Title */}
-              <h2 className="font-['urbanist'] font-extrabold text-[22px] md:text-[30px] leading-tight text-white tracking-tight">
-                Ready to Secure Your <span className="bg-gradient-to-r from-white via-white to-[#cca72f] bg-clip-text text-transparent">Chilli Supply?</span>
+              <h2 className="font-['urbanist'] font-bold text-[22px] sm:text-[26px] md:text-[32px] leading-[1.2] text-white tracking-tight">
+                Ready to secure your <span className="text-[#cca72f]">chilli supply?</span>
               </h2>
 
               {/* Description */}
@@ -1259,9 +1197,10 @@ const AboutCompany = () => {
                   href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20to%20request%20a%20bulk%20export%20quote.%20Please%20share%20your%20pricing%2C%20custom%20packaging%20options%2C%20and%20pesticide%20compliance%20documentation."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#cca72f] text-[#140002] px-8 py-3.5 rounded-full font-['urbanist'] font-extrabold text-[12px] uppercase tracking-wider hover:bg-[#e0bc55] shadow-lg shadow-[#cca72f]/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 text-center whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#8f000d] font-['urbanist'] font-extrabold text-[13px] py-3.5 px-7 rounded-lg uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 group whitespace-nowrap cursor-pointer"
                 >
                   Request Quote
+                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
 

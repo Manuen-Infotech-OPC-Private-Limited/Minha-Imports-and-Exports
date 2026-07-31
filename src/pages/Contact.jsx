@@ -17,6 +17,7 @@ import {
   FiPackage,
   FiGlobe
 } from 'react-icons/fi';
+import SectionHeading from '../components/common/SectionHeading';
 import {
   MdInventory2,
   MdVerified,
@@ -209,13 +210,18 @@ const Contact = () => {
 
               {/* LEFT: Text Content */}
               <div className="w-full lg:w-[32%] shrink-0 flex flex-col justify-center px-8 md:px-10 py-10 border-b lg:border-b-0 lg:border-r border-neutral-100">
-                <span className="font-['urbanist'] font-bold text-[10px] tracking-[0.25em] text-[#A50F15] uppercase mb-4 block">
-                  OUR REACH
-                </span>
-                <h2 className="font-['urbanist'] font-extrabold text-[26px] md:text-[32px] leading-[1.2] text-[#111827] mb-4 tracking-tight">
-                  Global Export Partnerships
-                </h2>
-                <div className="w-10 h-[3px] bg-[#2E6F4F] mb-5 rounded-full" />
+                <SectionHeading
+                  align="left"
+                  kicker="Our reach"
+                  title={
+                    <>
+                      Global export <span className="text-[#8f000d]">partnerships</span>
+                    </>
+                  }
+                  className="mb-4"
+                  showLeftLine={true}
+                  showRightLine={false}
+                />
                 <p className="font-['Nunito'] font-semibold text-[#6B7280] text-[13px] md:text-[14px] leading-[1.8]">
                   We welcome importers, wholesalers, food manufacturers, and retail distributors worldwide. Our infrastructure is designed to handle large-scale international orders while maintaining strict quality standards and logistics transparency.
                 </p>
@@ -286,18 +292,18 @@ const Contact = () => {
 
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
 
-          <div className="text-center mb-8 max-w-2xl mx-auto">
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.25em] text-[#8f000d] bg-[#8f000d]/10 px-4 py-1.5 rounded-full uppercase inline-block mb-3">
-              Interactive Portal
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-tight text-[#1a1c1e] tracking-tight">
-              Global Sourcing Gateway
-            </h2>
-            <div className="w-16 h-[3px] bg-[#cca72f] mx-auto my-5 rounded-full" />
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] leading-relaxed">
-              Experience our seamless digital procurement portal. Fill out our interactive inquiry form below to submit your custom spice requirements directly to our trade specialists.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Interactive portal"
+            title={
+              <>
+                Global sourcing <span className="text-[#8f000d]">gateway</span>
+              </>
+            }
+            intro="Experience our seamless digital procurement portal. Fill out our interactive inquiry form below to submit your custom spice requirements directly to our trade specialists."
+            className="mb-8"
+            showRightLine={true}
+          />
 
           {/* 3D Perspective Card Wrapper Container */}
           <div
@@ -519,7 +525,7 @@ const Contact = () => {
                       <div className="pt-1.5 flex flex-col sm:flex-row items-center justify-between gap-3">
                         <button
                           type="submit"
-                          className="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-[#8f000d] to-[#b22222] text-white font-['urbanist'] font-bold text-[11px] uppercase tracking-widest rounded-full hover:shadow-lg hover:shadow-[#8f000d]/20 hover:-translate-y-0.5 transition-all active:scale-95 inline-flex items-center justify-center gap-2 cursor-pointer group"
+                          className="inline-flex items-center justify-center gap-2 bg-[#8f000d] hover:bg-[#72000a] text-white font-['urbanist'] font-extrabold text-[13px] py-3.5 px-7 rounded-lg uppercase tracking-wider transition-all duration-300 shadow-md group whitespace-nowrap cursor-pointer w-full sm:w-auto text-center"
                         >
                           Send Inquiry
                           <FiSend className="text-xs transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5 duration-300" />
@@ -682,12 +688,18 @@ const Contact = () => {
 
             {/* LEFT PANEL: Frequently Asked Questions (Flat list of accordions) */}
             <div className="col-span-5 text-left">
-              <span className="text-[#2c6a46] font-['urbanist'] font-bold text-[10px] tracking-[0.25em] uppercase mb-2 block">
-                Support & Queries
-              </span>
-              <h3 className="font-['urbanist'] font-extrabold text-[28px] text-neutral-900 mb-6 tracking-tight">
-                Frequently Asked Questions
-              </h3>
+              <SectionHeading
+                align="left"
+                kicker="Support & queries"
+                title={
+                  <>
+                    Frequently asked <span className="text-[#8f000d]">questions</span>
+                  </>
+                }
+                className="mb-6"
+                showLeftLine={true}
+                showRightLine={false}
+              />
 
               <div className="space-y-4">
                 {faqs.map((faq, index) => {
@@ -751,15 +763,19 @@ const Contact = () => {
 
             {/* RIGHT PANEL: Visit Our Export Hub (Flat details & Map) */}
             <div className="col-span-7 text-left">
-              <span className="text-[#8f000d] font-['urbanist'] font-bold text-[10px] tracking-[0.25em] uppercase mb-2 block">
-                Corporate Location
-              </span>
-              <h3 className="font-['urbanist'] font-extrabold text-[28px] text-neutral-900 mb-1 tracking-tight">
-                Visit Our Export Hub
-              </h3>
-              <p className="font-['Nunito'] font-semibold text-neutral-500 text-[14px] mb-6">
-                Located Beside SBI ATM, Arundalpet.
-              </p>
+              <SectionHeading
+                align="left"
+                kicker="Corporate location"
+                title={
+                  <>
+                    Visit our <span className="text-[#8f000d]">export hub</span>
+                  </>
+                }
+                intro="Located Beside SBI ATM, Arundalpet."
+                className="mb-6"
+                showLeftLine={true}
+                showRightLine={false}
+              />
 
               {/* Sourcing Map Block */}
               <div className="w-full h-[360px] rounded-2xl overflow-hidden border border-neutral-200/80 shadow-md bg-neutral-100 mb-6">
@@ -783,7 +799,7 @@ const Contact = () => {
                     href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&rtp=%7Epos.16.30355453491211_80.43951416015625__Dry%2520Red%2520Chilli%2520Exporters%2520India%2520-%2520Minha%2520Imports%2520and%2520Exports_&cp=16.303555%7E80.439514&lvl=16&style=r"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3.5 bg-[#8f000d] hover:bg-[#72000a] text-white font-['urbanist'] font-bold text-[10px] tracking-wider uppercase rounded-xl transition-all duration-300 shadow-md text-center"
+                    className="inline-flex items-center justify-center gap-2 bg-[#8f000d] hover:bg-[#72000a] text-white font-['urbanist'] font-extrabold text-[12px] py-3.5 px-6 rounded-lg uppercase tracking-wider transition-all duration-300 shadow-md text-center"
                   >
                     Get Directions
                   </a>
@@ -791,7 +807,7 @@ const Contact = () => {
                     href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&rtp=%7Epos.16.30355453491211_80.43951416015625__Dry%2520Red%2520Chilli%2520Exporters%2520India%2520-%2520Minha%2520Imports%2520and%2520Exports_&cp=16.303555%7E80.439514&lvl=16&style=r"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3.5 border border-neutral-200 hover:bg-neutral-50 text-neutral-700 font-['urbanist'] font-bold text-[10px] tracking-wider uppercase rounded-xl transition-all duration-300 text-center"
+                    className="inline-flex items-center justify-center gap-2 border border-neutral-200 hover:bg-neutral-50 text-neutral-700 font-['urbanist'] font-extrabold text-[12px] py-3.5 px-6 rounded-lg uppercase tracking-wider transition-all duration-300 text-center"
                   >
                     View On Map
                   </a>
@@ -812,12 +828,18 @@ const Contact = () => {
 
             {/* FAQ Block */}
             <div className="text-left">
-              <span className="text-[#2c6a46] font-['urbanist'] font-bold text-[10px] tracking-[0.25em] uppercase mb-2 block">
-                Support & Queries
-              </span>
-              <h3 className="font-['urbanist'] font-black text-[24px] text-neutral-900 mb-5 tracking-tight leading-none">
-                Frequently Asked Questions
-              </h3>
+              <SectionHeading
+                align="left"
+                kicker="Support & queries"
+                title={
+                  <>
+                    Frequently asked <span className="text-[#8f000d]">questions</span>
+                  </>
+                }
+                className="mb-5"
+                showLeftLine={true}
+                showRightLine={false}
+              />
 
               <div className="space-y-3.5">
                 {faqs.map((faq, index) => {
@@ -881,15 +903,19 @@ const Contact = () => {
 
             {/* Visit Our Export Hub Block */}
             <div className="text-left border-t border-neutral-200 pt-6">
-              <span className="text-[#8f000d] font-['urbanist'] font-bold text-[10px] tracking-[0.25em] uppercase mb-2 block">
-                Corporate Location
-              </span>
-              <h3 className="font-['urbanist'] font-extrabold text-[24px] text-neutral-900 mb-1 tracking-tight leading-none">
-                Visit Our Export Hub
-              </h3>
-              <p className="font-['Nunito'] font-semibold text-neutral-500 text-[13px] mb-5">
-                Located Beside SBI ATM, Arundalpet.
-              </p>
+              <SectionHeading
+                align="left"
+                kicker="Corporate location"
+                title={
+                  <>
+                    Visit our <span className="text-[#8f000d]">export hub</span>
+                  </>
+                }
+                intro="Located Beside SBI ATM, Arundalpet."
+                className="mb-5"
+                showLeftLine={true}
+                showRightLine={false}
+              />
 
               {/* Map Block */}
               <div className="w-full h-[260px] rounded-2xl overflow-hidden border border-neutral-200 shadow-md bg-neutral-100 mb-5">
@@ -913,7 +939,7 @@ const Contact = () => {
                     href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&rtp=%7Epos.16.30355453491211_80.43951416015625__Dry%2520Red%2520Chilli%2520Exporters%2520India%2520-%2520Minha%2520Imports%2520and%2520Exports_&cp=16.303555%7E80.439514&lvl=16&style=r"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3.5 bg-[#8f000d] hover:bg-[#72000a] text-white font-['urbanist'] font-bold text-[10px] tracking-wider uppercase rounded-xl transition-all duration-300 shadow-md text-center"
+                    className="inline-flex items-center justify-center gap-2 bg-[#8f000d] hover:bg-[#72000a] text-white font-['urbanist'] font-extrabold text-[12px] py-3.5 px-6 rounded-lg uppercase tracking-wider transition-all duration-300 shadow-md text-center"
                   >
                     Get Directions
                   </a>
@@ -921,7 +947,7 @@ const Contact = () => {
                     href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&rtp=%7Epos.16.30355453491211_80.43951416015625__Dry%2520Red%2520Chilli%2520Exporters%2520India%2520-%2520Minha%2520Imports%2520and%2520Exports_&cp=16.303555%7E80.439514&lvl=16&style=r"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3.5 border border-neutral-200 hover:bg-neutral-50 text-neutral-700 font-['urbanist'] font-bold text-[10px] tracking-wider uppercase rounded-xl transition-all duration-300 text-center"
+                    className="inline-flex items-center justify-center gap-2 border border-neutral-200 hover:bg-neutral-50 text-neutral-700 font-['urbanist'] font-extrabold text-[12px] py-3.5 px-6 rounded-lg uppercase tracking-wider transition-all duration-300 text-center"
                   >
                     View On Map
                   </a>

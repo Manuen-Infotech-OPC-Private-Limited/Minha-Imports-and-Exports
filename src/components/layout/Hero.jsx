@@ -1,140 +1,160 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { GiChiliPepper } from 'react-icons/gi';
-import chilliPowderImg from '../../assets/chilli-powder-hero.png';
-import heroSlide1Img from '../../assets/hero.png';
+import { motion, useReducedMotion } from 'framer-motion';
+import { FiArrowRight } from 'react-icons/fi';
+import heroSackImg from '../../assets/hero-1-sack.jpg';
+import heroChilliesImg from '../../assets/hero-2-chillies.jpg';
+
+// Trade "manifest" line — real, buyer-facing facts, not marketing stats.
+const manifest = [
+  { label: 'Origin', value: 'Guntur, India' },
+  { label: 'Varieties', value: 'Teja · Sannam · Byadgi' },
+  { label: 'Certified', value: 'FSSAI · APEDA · ISO' },
+  { label: 'Exports', value: '15+ countries' },
+];
+
+const bgImages = [heroSackImg, heroChilliesImg];
+const MotionLink = motion(Link);
 
 const Hero = () => {
-  const bgImages = [
-    heroSlide1Img,
-    chilliPowderImg
-  ];
-
   const [currentIdx, setCurrentIdx] = useState(0);
+  const reduce = useReducedMotion();
 
-  // Slideshow transition interval
+  // Slow crossfade between the two hero photographs
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % bgImages.length);
-    }, 4500);
+    }, 5500);
     return () => clearInterval(timer);
   }, []);
 
-  // Motion variants for staged entrance animations of text overlay
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
+  const item = {
+    hidden: { opacity: 0, y: reduce ? 0 : 18 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1] // premium cubic-bezier easeOut
-      }
-    }
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
-  const MotionLink = motion(Link);
-  const MotionAnchor = motion.a;
-
   return (
-    <section className="relative w-full min-h-[90vh] md:h-[90vh] overflow-hidden flex items-end justify-center bg-black pb-8 md:pb-12 pt-28">
+    <section className="relative w-full min-h-[92vh] flex flex-col overflow-hidden bg-[#140605]">
 
-      {/* Background Image Slideshow with smooth crossfade and Ken Burns scale effect */}
+      {/* Background photography — slow crossfade */}
       <div className="absolute inset-0 z-0">
-        {bgImages.map((image, index) => {
-          const isActive = index === currentIdx;
-          return (
-            <motion.img
-              key={index}
-              src={image}
-              alt={index === 0 ? "Premium Guntur Dry Red Chillies" : "Pure Chilli Powder Sourcing"}
-              initial={{ opacity: index === 0 ? 1 : 0, scale: 1 }}
-              animate={{
-                opacity: isActive ? 1 : 0,
-                scale: isActive ? 1.06 : 1
-              }}
-              transition={{
-                opacity: { duration: 2.0, ease: "easeInOut" },
-                scale: { duration: 5.0, ease: "easeOut" }
-              }}
-              className="absolute inset-0 w-full h-full object-cover"
-              fetchPriority={index === 0 ? "high" : "low"}
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          );
-        })}
-        {/* Dark overlay (45% opacity for crisp text readability) */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        {bgImages.map((image, index) => (
+          <motion.img
+            key={index}
+            src={image}
+            alt={index === 0 ? 'Dried red chillies in a jute sack at a Guntur market' : 'Close-up of premium Guntur dried red chillies'}
+            initial={false}
+            animate={{ opacity: index === currentIdx ? 1 : 0 }}
+            transition={{ duration: 1.6, ease: 'easeInOut' }}
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority={index === 0 ? 'high' : 'low'}
+            loading={index === 0 ? 'eager' : 'lazy'}
+          />
+        ))}
+        {/* Left-heavy editorial scrim + base scrim for the manifest bar */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#140605]/92 via-[#140605]/55 to-[#140605]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#140605]/85 via-transparent to-transparent" />
+        {/* Top scrim keeps the transparent navbar legible over the photo */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#140605]/70 to-transparent" />
       </div>
 
-      {/* Radial ambient glow to boost visual depth */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#cca72f]/5 rounded-full blur-[120px] pointer-events-none z-15" />
-
-      {/* Main Content */}
-      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-12 text-center pt-4 pb-12 md:py-0">
+      {/* Main content */}
+      <div className="relative z-20 flex-1 flex items-center">
         <motion.div
-          variants={containerVariants}
+          variants={container}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center space-y-6 md:space-y-8"
+          className="w-full max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12 pt-28 pb-10"
         >
-          {/* Main Heading */}
-          <motion.h1
-            variants={itemVariants}
-            className="font-['urbanist'] font-extrabold text-white text-[38px] sm:text-[48px] md:text-[62px] leading-[1.15] md:leading-[1.08] tracking-tight max-w-4xl text-center"
-          >
-            Premium Guntur Dry Red Chillies <span className="bg-gradient-to-r from-[#ffdad6] via-[#cca72f] to-[#ffdad6] bg-clip-text text-transparent block mt-2">Exported Worldwide</span>
-          </motion.h1>
+          <div className="max-w-3xl">
 
-          {/* Subheading */}
-          <motion.p
-            variants={itemVariants}
-            className="font-['nunito'] font-semibold text-[15px] sm:text-[17px] md:text-[19px] leading-relaxed max-w-2xl text-white/95 text-center"
-          >
-            Delivering Quality, Purity and Trust Across Global Markets. We are your premium gateway to the finest spices from India's chilli capital.
-          </motion.p>
+            {/* Origin eyebrow (coordinates — trade vernacular) */}
+            <motion.div variants={item} className="flex items-center gap-3 mb-6">
+              <span className="h-px w-8 bg-[#cca72f]" />
+              <span className="font-mono text-[11px] sm:text-[12px] tracking-[0.22em] text-[#e6c65a] uppercase">
+                Guntur, India · 16.3°N 80.4°E
+              </span>
+            </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 pt-4 justify-center w-full sm:w-auto"
-          >
+            {/* Headline */}
+            <motion.h1
+              variants={item}
+              className="font-['urbanist'] font-extrabold text-white tracking-tight text-[40px] sm:text-[54px] md:text-[64px] lg:text-[68px] leading-[1.05] max-w-[16ch]"
+            >
+              Dry red chilli from Guntur, graded and shipped{' '}
+              <span className="relative whitespace-nowrap">
+                to spec.
+                <span className="absolute left-0 -bottom-1 h-[4px] w-full bg-[#cca72f] rounded-full" />
+              </span>
+            </motion.h1>
+
+            {/* Subcopy — specific to buyers */}
+            <motion.p
+              variants={item}
+              className="font-['nunito'] font-semibold text-white/85 text-[16px] sm:text-[18px] leading-relaxed mt-7 max-w-[54ch]"
+            >
+              Teja, Sannam and Byadgi — hand-sorted by SHU, ASTA and moisture,
+              then shipped FSSAI, APEDA and ISO-certified from India's chilli capital.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div variants={item} className="flex flex-col sm:flex-row gap-3.5 mt-9">
               <MotionLink
-              to="/varieties"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#8f000d] to-[#b22222] text-white font-['urbanist'] font-bold text-[13px] sm:text-[14px] py-4 px-9 rounded-full shadow-lg shadow-[#8f000d]/30 hover:shadow-[#8f000d]/50 transition-all duration-300 uppercase tracking-wider group"
-            >
-              Explore Varieties
-              <GiChiliPepper className="text-[20px] transition-transform group-hover:translate-x-1 duration-300 scale-x-[-1] rotate-45" />
-            </MotionLink>
+                to="/varieties"
+                whileHover={reduce ? undefined : { y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group inline-flex items-center justify-center gap-2 bg-[#8f000d] hover:bg-[#a3000f] text-white font-['urbanist'] font-bold text-[13px] sm:text-[14px] py-4 px-8 rounded-lg uppercase tracking-wider shadow-lg shadow-[#8f000d]/30 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#cca72f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#140605]"
+              >
+                Explore varieties
+                <FiArrowRight className="text-[17px] transition-transform duration-300 group-hover:translate-x-1" />
+              </MotionLink>
 
-            <MotionAnchor
-              href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20am%20interested%20in%20your%20premium%20Guntur%20dry%20red%20chillies.%20Please%20share%20more%20details%20about%20your%20products%20and%20pricing."
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center border border-white/30 backdrop-blur-sm text-white font-['urbanist'] font-bold text-[13px] sm:text-[14px] py-4 px-9 rounded-full hover:bg-white hover:text-[#8f000d] hover:border-white transition-all duration-300 uppercase tracking-wider"
-            >
-              Contact Us
-            </MotionAnchor>
-          </motion.div>
+              <motion.a
+                href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20an%20export%20quote%20for%20Guntur%20dry%20red%20chillies.%20Please%20share%20grades%2C%20specifications%20and%20pricing."
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={reduce ? undefined : { y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center border border-white/35 text-white font-['urbanist'] font-bold text-[13px] sm:text-[14px] py-4 px-8 rounded-lg uppercase tracking-wider hover:bg-white hover:text-[#8f000d] hover:border-white transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              >
+                Request an export quote
+              </motion.a>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 
+      {/* Signature: export manifest bar */}
+      <motion.div
+        variants={item}
+        initial="hidden"
+        animate="visible"
+        className="relative z-20 border-t border-white/15"
+      >
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12 py-5">
+          <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+            {manifest.map((m) => (
+              <div key={m.label} className="flex flex-col gap-1">
+                <dt className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#cca72f]">
+                  {m.label}
+                </dt>
+                <dd className="font-['urbanist'] font-bold text-[13px] sm:text-[14px] text-white/90 leading-snug">
+                  {m.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </motion.div>
     </section>
   );
 };

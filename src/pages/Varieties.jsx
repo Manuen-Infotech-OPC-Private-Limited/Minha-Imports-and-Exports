@@ -1,33 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SEO from '../components/common/SEO';
+import SectionHeading from '../components/common/SectionHeading';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiCheck, FiFilter, FiInfo, FiMail, FiDroplet, FiFileText, FiShield, FiCheckCircle } from 'react-icons/fi';
-import { GiChiliPepper } from 'react-icons/gi';
+import { FiArrowRight, FiCheck, FiFilter, FiMail, FiDroplet, FiFileText, FiShield } from 'react-icons/fi';
 import { chilliVarieties } from '../config/chilliData';
 import chilliHeroVarieties from '../assets/chilli-hero-varieties.png';
 import chilliIntroDry from '../assets/chilli-intro-dry.png';
 import chilliSpotlightDry from '../assets/chilli-spotlight-dry.png';
 import chilliBowlTable from '../assets/chilli-bowl-table.png';
 
+const tejaCertifications = [
+  "APEDA Certified",
+  "Aflatoxin Tested",
+  "Sudan Dye Free",
+  "Full COA Reports",
+  "ISO Sourcing",
+];
+
+const tejaFeatures = [
+  {
+    title: "Intense heat",
+    body: "75,000–110,000 SHU. Preferred by extract manufacturers and food spice makers globally.",
+    active: false,
+    pungency: true,
+  },
+  {
+    title: "Heat level",
+    body: "Consistently rated among the highest SHU varieties in Guntur production zones. Every batch lab-tested before dispatch.",
+    active: true,
+    scoville: true,
+  },
+  {
+    title: "Vivid color",
+    body: "Uniform deep red skin. ASTA 75–95. Stays bright through long sea journeys.",
+    active: false,
+    asta: true,
+  },
+];
+
+const tejaStats = [
+  { value: "110K", label: "MAX SHU" },
+  { value: "75–95", label: "ASTA COLOR" },
+  { value: "<12%", label: "MOISTURE" },
+  { value: "FOB", label: "SHIPPING BASIS" },
+];
+
 const Varieties = () => {
   const location = useLocation();
   const [activeFilter, setActiveFilter] = useState('All');
   const [isExpanded, setIsExpanded] = useState(false);
-
-  // Handle category filtering from navigation state
-  useEffect(() => {
-    if (location.state && location.state.category) {
-      setActiveFilter(location.state.category);
-      // Jump instantly to the catalog to avoid landing at the top of the page
-      setTimeout(() => {
-        const element = document.getElementById('varieties-catalog');
-        if (element) {
-          element.scrollIntoView({ behavior: 'auto', block: 'start' });
-        }
-      }, 0);
-    }
-  }, [location.state]);
+  const [tejaImgError, setTejaImgError] = useState(false);
 
   const redBgStyle = {
     backgroundImage: `
@@ -57,6 +80,20 @@ const Varieties = () => {
       window.scrollTo(0, 0);
     }
   }, []);
+
+  // Handle category filtering from navigation state
+  useEffect(() => {
+    if (location.state && location.state.category) {
+      setActiveFilter(location.state.category);
+      // Jump instantly to the catalog to avoid landing at the top of the page
+      setTimeout(() => {
+        const element = document.getElementById('varieties-catalog');
+        if (element) {
+          element.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+      }, 0);
+    }
+  }, [location.state]);
 
   // Reset expansion when filter changes
   useEffect(() => {
@@ -120,26 +157,29 @@ const Varieties = () => {
 
           {/* Copy content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 text-left"
+            className="text-left"
           >
-            <span className="text-[#8f000d] font-['urbanist'] font-bold text-[12px] tracking-[0.2em] uppercase block">
-              Global Sourcing Excellence
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Precision-Graded for <br className="hidden sm:inline" /> Global Markets
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6]">
-              At Minha Imports & Exports, we understand the nuances of global commodity trading. Our red chillies are sourced directly from the fertile Guntur region, processed in state-of-the-art facilities to meet stringent international food safety standards.
+            <SectionHeading
+              kicker="Direct from the Source"
+              title={
+                <>
+                  Red chillies selected and graded for <span className="text-[#8f000d]">your business.</span>
+                </>
+              }
+            />
+
+            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.7] mt-6">
+              We source premium red chillies directly from trusted farmers in Guntur, the heart of India's chilli trade. Every batch is carefully selected and checked to ensure high quality and food safety.
             </p>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6]">
-              From moisture control to stem removal and customized grading, every batch undergoes rigorous quality checks. We cater to diverse requirements including whole pods, crushed flakes, and fine powder, ensuring the SHU levels and color values match your exact technical specifications.
+            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[16px] leading-[1.7] mt-4">
+              We offer whole chillies, crushed flakes, and fine chilli powder, with customized packaging and product specifications to meet your business requirements.
             </p>
 
-            <div className="pt-4 flex gap-10">
+            <div className="pt-6 flex gap-10">
               <div className="space-y-1">
                 <p className="text-[#8f000d] font-['urbanist'] font-bold text-[24px] md:text-[28px] leading-none">100%</p>
                 <p className="font-['urbanist'] font-bold text-[11px] uppercase tracking-[0.1em] text-[#a0a5ad]">Traceability</p>
@@ -159,7 +199,7 @@ const Varieties = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute -inset-4 bg-[#8f000d]/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500" />
+            <div className="absolute -inset-4 bg-[#8f000d]/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
             <img
               alt="Systematic Grading of Guntur Chillies"
               loading="lazy"
@@ -171,157 +211,137 @@ const Varieties = () => {
         </div>
       </section>
 
-      {/* 3. Chilli Varieties Showcase catalog */}
-      <section id="varieties-catalog" className="py-10 md:py-14 bg-surface-container-low border-t border-[#1a1c1e]/[0.02] border-b border-[#1a1c1e]/[0.02]">
-        <div className="px-6 md:px-12 max-w-[1280px] mx-auto">
-
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-primary tracking-tight">
-              Our Core Varieties
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] md:text-[16px] leading-[1.6]">
-              We offer tailored grades across major varieties to suit extraction, food service, and spice blend specifications.
-            </p>
-
-            {/* Dynamic Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-2 pt-6">
-              {categories.map((cat, idx) => {
-                let icon;
-                if (cat === 'All') {
-                  icon = (
-                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                      <rect x="3" y="3" width="6" height="6" rx="1.5" />
-                      <rect x="15" y="3" width="6" height="6" rx="1.5" />
-                      <rect x="15" y="15" width="6" height="6" rx="1.5" />
-                      <rect x="3" y="15" width="6" height="6" rx="1.5" />
-                    </svg>
-                  );
-                } else if (cat === 'Teja S17' || cat === 'Byadgi') {
-                  icon = (
-                    <GiChiliPepper className={`w-4.5 h-4.5 mr-2 ${activeFilter === cat ? 'text-white' : 'text-[#8f000d]'}`} />
-                  );
-                } else if (cat === 'S4 / 334') {
-                  icon = (
-                    <svg className={`w-4.5 h-4.5 mr-2 ${activeFilter === cat ? 'text-white' : 'text-[#1F5E3B]'}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      <path d="m9 11 2 2 4-4" />
-                    </svg>
-                  );
-                } else if (cat === 'S10') {
-                  icon = (
-                    <svg className={`w-4.5 h-4.5 mr-2 ${activeFilter === cat ? 'text-white' : 'text-[#cca72f]'}`} fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  );
-                } else if (cat === 'Other Varieties') {
-                  icon = (
-                    <svg className={`w-4.5 h-4.5 mr-2 ${activeFilter === cat ? 'text-white' : 'text-[#d97706]'}`} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="12" y1="8" x2="12" y2="16" />
-                      <line x1="8" y1="12" x2="16" y2="12" />
-                    </svg>
-                  );
-                }
-
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveFilter(cat)}
-                    className={`px-5 py-2.5 rounded-full font-['urbanist'] font-bold text-[12px] tracking-wider uppercase transition-all duration-300 flex items-center ${activeFilter === cat
-                      ? 'bg-[#8f000d] text-white shadow-lg'
-                      : 'bg-white text-[#5a403e] border border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300'
-                      }`}
-                  >
-                    {icon}
-                    {cat}
-                  </button>
-                );
-              })}
+      {/* 3. Chilli Varieties Showcase catalog — Specimen Ledger redesign */}
+      <section id="varieties-catalog" className="py-10 md:py-14 bg-[#faf8f4]">
+        <div className="px-6 md:px-12 max-w-[1180px] mx-auto">
+          {/* Header — docket style, not centered hero */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 pb-6 border-b border-dashed border-[#1a1c1e]/20">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="h-px w-7 bg-[#cca72f]" />
+                <span className="font-['urbanist'] font-extrabold text-[11px] tracking-[0.15em] uppercase text-[#8f000d]">
+                  Export grading register
+                </span>
+              </div>
+              <h2 className="font-['urbanist'] uppercase font-extrabold text-[28px] md:text-[36px] tracking-tight text-[#1a1c1e] leading-[1.05] mt-2">
+                Core chilli varieties
+              </h2>
+              <p className="font-['Nunito'] font-semibold text-[13.5px] text-[#5a403e] mt-2 max-w-md leading-relaxed">
+                Indian red chilli, graded and lotted for spice processing,
+                extraction, and food manufacture. Specs verified per shipment.
+              </p>
+            </div>
+            <div className="font-['Nunito'] font-bold text-[12px] text-[#5a403e] whitespace-nowrap">
+              {filteredVarieties.length.toString().padStart(2, '0')} varieties
             </div>
           </div>
 
-          {/* Product Cards Grid */}
-          <motion.div
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-          >
+          {/* Filter — index tabs, not pills */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-['urbanist'] font-extrabold text-[12.5px] uppercase tracking-wider">
+            {categories.map((cat, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveFilter(cat)}
+                className={`pb-1.5 border-b-2 transition-colors duration-200 cursor-pointer ${activeFilter === cat
+                  ? 'border-[#8f000d] text-[#1a1c1e]'
+                  : 'border-transparent text-[#5a403e]/70 hover:text-[#1a1c1e]'
+                  }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Ledger rows */}
+          <motion.div layout className="flex flex-col">
             <AnimatePresence mode="popLayout">
-              {filteredVarieties.map((chilli) => (
+              {filteredVarieties.map((chilli, idx) => (
                 <motion.div
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                   key={chilli.id}
-                  className="bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] border border-neutral-100 flex flex-col justify-between group  hover:shadow-[0_20px_45px_-10px_rgba(178,34,34,0.18)] transition-all duration-500"
+                  className="group grid grid-cols-[88px_1fr] md:grid-cols-[120px_1fr_auto] gap-5 md:gap-8 items-center py-6 border-b border-[#1a1c1e]/10 last:border-b-0"
                 >
-                  {/* Image container */}
-                  <Link to={`/varieties/${chilli.id}`} className="relative h-48 overflow-hidden bg-neutral-100 block">
+                  {/* Sample swatch */}
+                  <Link
+                    to={`/varieties/${chilli.id}`}
+                    className="relative w-[88px] h-[88px] md:w-[120px] md:h-[120px] bg-[#e4dccb] overflow-hidden flex-shrink-0 border border-[#1a1c1e]/10 rounded"
+                  >
                     <img
                       src={chilli.image}
                       alt={chilli.name}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Grade stamp */}
                   </Link>
 
-                  {/* Details content */}
-                  <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
-                    <div className="space-y-2">
-                      <span className={`text-[11px] font-['urbanist'] font-bold tracking-widest uppercase block ${getCategoryColorClass(chilli.category)}`}>
-                        {chilli.category}
-                      </span>
-                      <h3 className="font-['urbanist'] font-bold text-[16px] md:text-[18px] text-[#1a1c1e] group-hover:text-[#8f000d] transition-colors leading-snug">
-                        <Link to={`/varieties/${chilli.id}`} className="hover:text-[#8f000d]">
+                  {/* Identity + spec strip */}
+                  <div className="min-w-0">
+                    <div className="flex items-baseline gap-3 flex-wrap">
+                      <h3 className="font-['urbanist'] uppercase font-extrabold text-[17px] md:text-[19px] text-[#1a1c1e] tracking-tight leading-tight">
+                        <Link to={`/varieties/${chilli.id}`} className="hover:text-[#8f000d] transition-colors">
                           {chilli.name}
                         </Link>
                       </h3>
-                      <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[13px] leading-[1.5] h-15 overflow-hidden text-ellipsis line-clamp-3">
-                        {chilli.description}
-                      </p>
+                      <span className={`font-['urbanist'] font-extrabold text-[10.5px] uppercase tracking-wider ${getCategoryColorClass(chilli.category)}`}>
+                        {chilli.category}
+                      </span>
                     </div>
 
+                    <p className="font-['Nunito'] font-semibold text-[13.5px] text-[#5a403e] leading-[1.6] mt-1.5 max-w-lg line-clamp-2">
+                      {chilli.description}
+                    </p>
 
-
-                    {/* Enquiry Buttons */}
-                    <div className="grid grid-cols-2 gap-2 pt-2">
-                      <Link
-                        to={`/varieties/${chilli.id}`}
-                        className="text-[#8f000d] border border-[#8f000d]/20 py-2.5 rounded-lg font-['urbanist'] font-bold text-[11px] leading-none uppercase tracking-wider hover:bg-[#8f000d]/5 hover:border-[#8f000d]/40 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                      >
-                        <FiInfo className="text-[13px] flex-shrink-0" /> Details
-                      </Link>
-                      <Link
-                        to="/contact"
-                        className="bg-[#8f000d] text-white py-2.5 rounded-lg font-['urbanist'] font-bold text-[11px] leading-none uppercase tracking-wider hover:bg-[#72000a] transition-all duration-300 flex items-center justify-center gap-1.5 shadow-md hover:shadow-lg shadow-[#8f000d]/10 hover:-translate-y-0.5"
-                      >
-                        <FiMail className="text-[13px] flex-shrink-0" /> Inquire
-                      </Link>
+                    {/* Spec strip — renders fields mapped correctly from config data */}
+                    <div className="flex flex-wrap gap-x-5 gap-y-1 mt-3 font-['Nunito'] font-bold text-[12.5px] text-[#1a1c1e]">
+                      {chilli.heatLevel && (
+                        <span><span className="text-[#5a403e]/70">SHU</span> {chilli.heatLevel}</span>
+                      )}
+                      {chilli.colorValue && (
+                        <span><span className="text-[#5a403e]/70">ASTA</span> {chilli.colorValue}</span>
+                      )}
+                      {chilli.moisture && (
+                        <span><span className="text-[#5a403e]/70">MOIST</span> {chilli.moisture}</span>
+                      )}
+                      {chilli.grade && (
+                        <span><span className="text-[#5a403e]/70">GRADE</span> {chilli.grade}</span>
+                      )}
                     </div>
+                  </div>
+
+                  {/* Actions — right column on desktop, full width on mobile */}
+                  <div className="col-span-2 md:col-span-1 flex gap-2 md:flex-col md:items-stretch mt-1 md:mt-0 md:w-[120px]">
+                    <Link
+                      to={`/varieties/${chilli.id}`}
+                      className="flex-1 md:flex-none text-center border border-[#1a1c1e]/20 text-[#1a1c1e] py-2 font-['urbanist'] font-bold text-[10px] uppercase tracking-wider hover:border-[#1a1c1e] hover:bg-[#1a1c1e]/5 transition-all duration-300 cursor-pointer"
+                    >
+                      Details
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="flex-1 md:flex-none text-center bg-[#8f000d] text-white py-2 font-['urbanist'] font-bold text-[10px] uppercase tracking-wider hover:bg-[#72000a] transition-all duration-300 cursor-pointer"
+                    >
+                      Inquire
+                    </Link>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
           </motion.div>
 
-          {/* View All / Show Less Button */}
+          {/* View all / show less */}
           {activeFilter === 'All' && chilliVarieties.length > 4 && (
-            <div className="flex justify-center pt-12">
+            <div className="flex justify-center pt-10">
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="bg-[#8f000d] hover:bg-[#72000a] text-white font-['urbanist'] font-bold text-[13px] py-4.5 px-10 rounded-full shadow-[0_4px_15px_rgba(143,0,13,0.15)] hover:shadow-[0_8px_25px_rgba(143,0,13,0.25)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group cursor-pointer border-none uppercase tracking-wider"
+                className="font-['urbanist'] font-extrabold text-[11px] uppercase tracking-[0.15em] text-[#1a1c1e] border-b-2 border-[#1a1c1e] pb-1.5 hover:text-[#8f000d] hover:border-[#8f000d] transition-all duration-300 flex items-center gap-2 cursor-pointer"
               >
-                {isExpanded ? (
-                  <>
-                    Show Less <FiArrowRight className="-rotate-90 group-hover:-translate-y-1 transition-transform text-base" />
-                  </>
-                ) : (
-                  <>
-                    View All Varieties <FiArrowRight className="group-hover:translate-x-1 transition-transform text-base" />
-                  </>
-                )}
+                {isExpanded ? 'Show fewer varieties' : 'View all varieties'}
+                <FiArrowRight className={`text-[12px] transition-transform ${isExpanded ? '-rotate-90' : ''}`} />
               </button>
             </div>
           )}
@@ -330,58 +350,201 @@ const Varieties = () => {
       </section>
 
       {/* 4. Special Spotlight: Teja S17 */}
-      <section className="py-10 md:py-14 px-6 md:px-12 max-w-[1280px] mx-auto z-10 relative">
-        <div className="bg-[#111315] text-white rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-white/[0.03]">
-          {/* Spotlight text */}
-          <div className="lg:w-1/2 p-8 md:p-12 lg:p-20 flex flex-col justify-center text-left space-y-6">
-            <span className="text-[#cca72f] font-['urbanist'] font-bold text-[11px] tracking-[0.25em] uppercase block">
-              PLATINUM EXPORT GRADE
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-white tracking-tight">
-              The King of Spice: <br /> Teja S17
-            </h2>
-            <p className="font-['Nunito'] text-[#a0a5ad] text-[14px] sm:text-[15px] leading-relaxed">
-              Minha’s premium Teja S17 is the hallmark of heat and flavor. Sourced directly from Guntur’s top farms, this variety is highly sought after by global food processors and spice extractors.
-            </p>
-            <ul className="space-y-4 pt-2">
-              {[
-                { title: "Highest SHU Rating", desc: "Intense pungency levels exceeding 75k–110k SHU, ideal for oleoresins.", icon: <FiCheck className="text-[#cca72f] text-lg mt-0.5" /> },
-                { title: "Bright Red Luster", desc: "Stunning uniform red skin color that retains its brightness during export shipping.", icon: <FiCheck className="text-[#cca72f] text-lg mt-0.5" /> },
-                { title: "Strict Global Compliance", desc: "Meets international pesticide residue levels and strict Aflatoxin compliance.", icon: <FiCheck className="text-[#cca72f] text-lg mt-0.5" /> }
-              ].map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#cca72f]/10 flex items-center justify-center">
-                    {feat.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-['urbanist'] font-bold text-[15px] text-white leading-tight">{feat.title}</h4>
-                    <p className="font-['Nunito'] text-[#a0a5ad]/80 text-[13px] mt-1">{feat.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+      <section className="py-12 md:py-16 px-6 md:px-12 max-w-[1280px] mx-auto z-10 relative">
+        <div className="max-w-[1100px] mx-auto text-left">
 
-            <a
-              href="#inquire"
-              className="bg-[#cca72f] text-black font-['urbanist'] font-bold text-[13px] py-4 px-8 rounded-xl hover:bg-[#cca72f]/90 hover:translate-y-[-2px] transition-all self-start uppercase tracking-wider mt-4 shadow-lg shadow-[#cca72f]/10"
-            >
-              Get Teja Quote
-            </a>
+          {/* Top Row Label / Badge */}
+          <div className="flex justify-between items-start gap-4 mb-8">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-0.5" style={{ backgroundColor: '#cca72f' }} />
+              <span className="font-mono text-[11px] tracking-[0.22em] text-[#cca72f] uppercase">
+                Top Choice — Teja S17
+              </span>
+            </div>
           </div>
 
-          {/* Spotlight image */}
-          <div className="lg:w-1/2 relative min-h-[400px]">
-            <img
-              className="absolute inset-0 w-full h-full object-cover"
-              src={chilliSpotlightDry}
-              loading="lazy"
-              alt="Teja S17 Graded Hot Chillies"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 via-transparent to-transparent z-10" />
+          {/* Headline & Description side-by-side with Image */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center mb-8">
+            <div className="md:col-span-3">
+              {/* Headline & Watermark */}
+              <div className="relative mb-6">
+                <div
+                  className="absolute font-['urbanist'] font-black text-neutral-200/70 select-none pointer-events-none z-0 leading-none"
+                  style={{
+                    fontSize: "180px",
+                    top: "-38px",
+                    left: "-8px",
+                  }}
+                >
+                  01
+                </div>
+                <h2 className="relative z-10 font-['urbanist'] font-extrabold tracking-tight text-[32px] sm:text-[42px] md:text-[48px] leading-[1.15] text-[#1a1c1e]">
+                  The <span className="text-[#8f000d]">king of spice.</span>
+                  <br />
+                  Nothing comes close.
+                </h2>
+              </div>
+
+              {/* Gold divider */}
+              <div className="w-16 h-0.5 mb-6" style={{ backgroundColor: '#cca72f' }} />
+
+              {/* Description */}
+              <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] sm:text-[16px] leading-[1.6] max-w-xl">
+                Sourced exclusively from select farms in Guntur's red-soil belt. Teja S17 delivers a heat profile and color that's become the benchmark for spice manufacturers worldwide.
+              </p>
+            </div>
+
+            {/* Product Image Column (With Badge Overlay) */}
+            <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-sm border border-[#e0dbd5] bg-[#fdfcfa] p-3 flex items-center justify-center min-h-[220px]">
+              <div className="relative w-full h-full">
+                <img
+                  src={chilliSpotlightDry}
+                  alt="Teja S17 Dried Red Chilli Product Showcase"
+                  className="w-full h-full object-cover rounded-xl max-h-[280px]"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 right-3 font-mono text-[9px] tracking-[0.06em] text-white uppercase px-2.5 py-1 rounded bg-[#8f000d] shadow-sm font-semibold select-none z-10">
+                  #1 Export Volume
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 border border-[#e0dbd5] rounded-xl overflow-hidden mb-8 bg-white">
+            {tejaStats.map((s, idx) => (
+              <div
+                key={idx}
+                className={`p-4 md:p-5 ${idx < 3 ? "border-b sm:border-b-0 sm:border-r border-[#e0dbd5]" : ""
+                  } ${idx === 2 ? "border-b-0 sm:border-b-0" : ""} text-left`}
+              >
+                <div className="text-[20px] md:text-[24px] font-['urbanist'] font-extrabold text-[#8f000d] leading-tight">
+                  {s.value}
+                </div>
+                <div className="text-[10px] tracking-[0.08em] text-[#5f5b58] uppercase font-mono mt-1.5 font-semibold">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Feature Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            {tejaFeatures.map((f, idx) => (
+              <div
+                key={idx}
+                className={`p-6 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 ${f.active
+                  ? "bg-[#7b1a1a] text-white border-transparent shadow-lg shadow-[#7b1a1a]/15"
+                  : "bg-white text-[#1a1a1a] border-[#e0dbd5] hover:border-neutral-400"
+                  }`}
+              >
+                <div>
+                  <div
+                    className={`w-5 h-5 rounded border flex items-center justify-center text-[10px] mb-4 font-bold ${f.active
+                      ? "border-white/30 text-white"
+                      : "border-neutral-300 text-neutral-500"
+                      }`}
+                  >
+                    ✓
+                  </div>
+                  <h4 className={`font-['urbanist'] font-extrabold text-[14.5px] mb-2 ${f.active ? "text-white" : "text-[#8f000d]"}`}>{f.title}</h4>
+                  <p
+                    className={`font-['Nunito'] font-semibold text-[12.5px] leading-relaxed ${f.active ? "text-white/85" : "text-[#5a403e]"
+                      }`}
+                  >
+                    {f.body}
+                  </p>
+                </div>
+
+                {f.pungency && (
+                  <div className="mt-6">
+                    <div className="text-[9px] tracking-widest text-[#5a403e]/60 uppercase font-bold mb-1.5">
+                      Pungency Rating
+                    </div>
+                    <div className="h-1 bg-neutral-100 rounded-full overflow-hidden relative">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-[#cca72f] rounded-full"
+                        style={{ width: "90%" }}
+                      />
+                    </div>
+                    <div className="flex justify-between items-center text-[9px] text-[#5a403e]/50 mt-1 font-mono">
+                      <span>Mild</span>
+                      <span>110K SHU Max</span>
+                    </div>
+                  </div>
+                )}
+
+                {f.scoville && (
+                  <div className="mt-6">
+                    <div className="text-[9px] tracking-widest text-white/60 uppercase font-bold mb-1.5">
+                      Scoville Scale
+                    </div>
+                    <div className="h-1 bg-white/20 rounded-full overflow-hidden relative">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#f5c842] to-[#c0392b] rounded-full"
+                        style={{ width: "78%" }}
+                      />
+                    </div>
+                    <div className="flex justify-between items-center text-[9px] text-white/50 mt-1 font-mono">
+                      <span>0</span>
+                      <span>75K — 110K SHU</span>
+                    </div>
+                  </div>
+                )}
+
+                {f.asta && (
+                  <div className="mt-6">
+                    <div className="text-[9px] tracking-widest text-[#5a403e]/60 uppercase font-bold mb-1.5">
+                      ASTA Color Value
+                    </div>
+                    <div className="h-1 bg-neutral-100 rounded-full overflow-hidden relative">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-[#8f000d] rounded-full"
+                        style={{ width: "85%" }}
+                      />
+                    </div>
+                    <div className="flex justify-between items-center text-[9px] text-[#5a403e]/50 mt-1 font-mono">
+                      <span>0 ASTA</span>
+                      <span>75 — 95 ASTA</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Certification Pills */}
+          <div className="flex flex-wrap gap-2.5 mb-8">
+            {tejaCertifications.map((c, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2 border border-neutral-200 rounded-full px-4 py-1.5 text-[#5a403e] font-['urbanist'] font-extrabold text-[12px] bg-white"
+              >
+                <div className="w-3.5 h-3.5 rounded border border-neutral-300 flex items-center justify-center text-[8px] text-neutral-500 font-bold">
+                  ✓
+                </div>
+                {c}
+              </div>
+            ))}
+          </div>
+
+          {/* Footer Row */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6 border-t border-neutral-100 pt-6">
+            <p className="font-['Nunito'] italic text-[#5a403e]/75 text-[13px] text-left max-w-sm leading-relaxed">
+              "Our Teja is graded by hand, batch by batch — not sorted by machine and forgotten."
+            </p>
+            <a
+              href="#inquire"
+              className="inline-flex items-center gap-2 border-2 border-[#1a1c1e] bg-transparent hover:bg-[#1a1c1e] hover:text-white text-[#1a1c1e] font-['urbanist'] font-extrabold text-[12px] tracking-wider uppercase py-3.5 px-6 rounded-lg transition-all duration-300 w-full sm:w-auto justify-center"
+            >
+              <div className="w-3.5 h-3.5 rounded border border-current flex items-center justify-center text-[8px] font-bold">
+                ✓
+              </div>
+              Get a Teja Quote ↗
+            </a>
           </div>
         </div>
       </section>
-
       {/* 5. Quality Standards & Sourcing Ethics */}
       <section className="py-10 md:py-14 bg-surface-container-low relative overflow-hidden">
         {/* Soft elegant background blur graphics */}
@@ -391,23 +554,18 @@ const Varieties = () => {
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
 
           {/* Section Heading with animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto mb-16 space-y-4"
-          >
-            <span className="font-['urbanist'] font-bold text-[11px] tracking-[0.2em] text-[#8f000d] uppercase inline-block mb-2">
-              Quality Standards
-            </span>
-            <h2 className="font-['urbanist'] font-bold text-[32px] md:text-[40px] leading-[1.2] text-[#1a1c1e] tracking-tight">
-              Uncompromising Sourcing Ethics
-            </h2>
-            <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[15px] leading-relaxed">
-              Our seed-to-shipment workflow ensures that the quality harvested on the farm is exactly what arrives at your destination port.
-            </p>
-          </motion.div>
+          <SectionHeading
+            align="center"
+            kicker="Quality Standards"
+            showRightLine={false}
+            title={
+              <>
+                Our quality checks from <span className="text-[#8f000d]">farm to port</span>
+              </>
+            }
+            intro="We make sure that the quality harvested on the farm is exactly what gets delivered to you. Every batch goes through strict testing."
+            className="mb-12 md:mb-16"
+          />
 
           {/* Cards Grid */}
           <motion.div
@@ -423,33 +581,33 @@ const Varieties = () => {
             {[
               {
                 idx: "01",
-                title: "Precision Sorting",
-                desc: "Hand-sorted selection based on grade, color intensity, skin thickness, and cap presence.",
-                details: ["Uniform size selection", "Discolored pod elimination", "Foreign matter removal"],
+                title: "Sorting",
+                desc: "Hand-sorting by color, size, and grade. We remove all discolored pods and mixed materials.",
+                details: ["Uniform size selection", "Color consistency checks", "Clean sorting floors"],
                 icon: <FiFilter className="text-white text-xl" />,
                 bg: "bg-[#8f000d]"
               },
               {
                 idx: "02",
-                title: "Moisture Controls",
-                desc: "Rigorous moisture checks to secure storage integrity and preserve rich ASTA colors.",
-                details: ["Maintained under 12% moisture", "Preventative heat damage drying", "Anti-mold storage environment"],
+                title: "Moisture checks",
+                desc: "Strict humidity checks during packing and warehousing to prevent mold and lock in flavor.",
+                details: ["Under 12% moisture limit", "Dry climate storage", "Mold prevention setup"],
                 icon: <FiDroplet className="text-white text-xl" />,
                 bg: "bg-[#1F5E3B]"
               },
               {
                 idx: "03",
-                title: "Hygienic Cleaning",
-                desc: "Multiple screening stages to eliminate physical impurities and dust.",
-                details: ["Metal detector scanners", "Forced-air blowing cleaners", "Sanitized handling floors"],
+                title: "Deep cleaning",
+                desc: "Cleaning through multiple screens, magnets, and blowers to remove dust and dirt.",
+                details: ["Metal scanning machines", "High-pressure air cleaning", "Dust-free processing"],
                 icon: <FiShield className="text-white text-xl" />,
                 bg: "bg-[#cca72f]"
               },
               {
                 idx: "04",
-                title: "Lab Certification",
-                desc: "All trade shipments are strictly tested and issued with analytical COA reports.",
-                details: ["Aflatoxin residue tests", "Sudan dye screenings", "COA reports with shipments"],
+                title: "Lab testing",
+                desc: "Every container is tested by independent labs and shipped with official COA reports.",
+                details: ["Aflatoxin clearance tests", "Sudan dye residue checks", "Full lab certificate reports"],
                 icon: <FiFileText className="text-white text-xl" />,
                 bg: "bg-[#a73b0f]"
               }
@@ -460,7 +618,7 @@ const Varieties = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
                 }}
-                className="bg-white p-8 rounded-3xl border border-neutral-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-300 group"
+                className="bg-white p-6 md:p-8 rounded-2xl border border-neutral-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_16px_36px_rgba(0,0,0,0.04)] transition-all duration-300 group"
               >
                 <div className="space-y-5">
                   <div className="flex justify-between items-center">
@@ -470,13 +628,13 @@ const Varieties = () => {
                     </div>
                   </div>
                   <h3 className="font-['urbanist'] font-bold text-[18px] text-[#1a1c1e] leading-snug">{item.title}</h3>
-                  <p className="font-['Nunito'] text-[#5a403e] text-[13.5px] leading-relaxed">{item.desc}</p>
+                  <p className="font-['Nunito'] text-[#5a403e]/90 text-[13.5px] leading-relaxed font-semibold">{item.desc}</p>
                 </div>
-                <ul className="space-y-2.5 border-t border-neutral-100/80 pt-5 mt-5 text-[12.5px] font-['Nunito'] font-semibold text-[#1a1c1e] text-left">
+                <ul className="space-y-3 border-t border-neutral-100 pt-5 mt-5 text-left">
                   {item.details.map((det, dIdx) => (
-                    <li key={dIdx} className="flex items-center gap-2">
-                      <FiCheck className="text-[#1F5E3B] text-[14px] flex-shrink-0" />
-                      <span>{det}</span>
+                    <li key={dIdx} className="flex items-start gap-2.5">
+                      <FiCheck className="text-[#1F5E3B] text-[15px] flex-shrink-0 mt-0.5" />
+                      <span className="text-[13px] font-['Nunito'] font-semibold text-[#5a403e]/90 leading-tight">{det}</span>
                     </li>
                   ))}
                 </ul>
@@ -494,28 +652,26 @@ const Varieties = () => {
           >
             {/* Text details for packaging */}
             <div className="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl border border-neutral-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between gap-6 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300">
-              <div className="space-y-4">
-                <div className="inline-block px-4 py-1 bg-[#1F5E3B]/10 text-[#1F5E3B] font-['urbanist'] font-bold text-[10px] uppercase tracking-wider rounded-md">
-                  Export Packaging
-                </div>
-                <h3 className="font-['urbanist'] font-bold text-[22px] md:text-[24px] text-[#1a1c1e]">
-                  Custom Packaging Solutions
-                </h3>
-                <p className="font-['Nunito'] text-[#5a403e] text-[14px] md:text-[15px] leading-relaxed">
-                  We supply all bulk orders in premium quality packaging to withstand long-transit sea shipments and maintain freshness, color, and aroma. Custom branding and labeling are available as per buyer request.
-                </p>
+              <div>
+                <SectionHeading
+                  kicker="Export Packaging"
+                  title="Custom Packaging Options"
+                  intro="We pack all bulk orders securely so they survive long sea journeys and stay fresh, colorful, and aromatic. We can also print your brand and label details on the packaging."
+                  tone="dark"
+                  kickerColor="#1F5E3B"
+                />
               </div>
 
               {/* Packaging types row */}
               <div className="grid grid-cols-3 gap-4 border-t border-neutral-100 pt-6">
                 {[
-                  { name: "Jute Bags", desc: "Traditional breathable eco-friendly storage" },
-                  { name: "PP Bags", desc: "Woven moisture-proof bags for export" },
-                  { name: "Carton Boxes", desc: "Rigid corrugated boxes for pod protection" }
+                  { name: "Jute Bags", desc: "Natural breathable bags for standard shipping" },
+                  { name: "PP Bags", desc: "Woven moisture-proof bags for export shipping" },
+                  { name: "Carton Boxes", desc: "Rigid corrugated boxes to protect the pods" }
                 ].map((pkg, idx) => (
                   <div key={idx} className="space-y-1">
                     <h5 className="font-['urbanist'] font-bold text-[13px] text-[#8f000d]">{pkg.name}</h5>
-                    <p className="font-['Nunito'] font-semibold text-[#5a403e] text-[11px] leading-tight">{pkg.desc}</p>
+                    <p className="font-['Nunito'] font-semibold text-[#5a403e]/90 text-[11px] leading-tight">{pkg.desc}</p>
                   </div>
                 ))}
               </div>
@@ -531,8 +687,8 @@ const Varieties = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
               <div className="absolute bottom-6 left-6 z-20">
-                <p className="font-['urbanist'] font-bold text-white text-[16px] leading-tight">Export Grade Logistics</p>
-                <p className="font-['Nunito'] text-white/80 text-[11px] mt-0.5">Sealed-fresh destination port delivery</p>
+                <p className="font-['urbanist'] font-bold text-white text-[16px] leading-tight">Global Export Shipping</p>
+                <p className="font-['Nunito'] text-white/85 text-[11.5px] mt-1 font-semibold">Packed securely and delivered fresh to your nearest port</p>
               </div>
             </div>
           </motion.div>
@@ -559,50 +715,42 @@ const Varieties = () => {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
               {/* Left Column: Sourcing Quote (lg:col-span-5) */}
-              <div className="relative space-y-4 text-center lg:text-left lg:border-r lg:border-white/10 lg:pr-8 xl:pr-12 lg:col-span-5 w-full z-10">
-                <span className="absolute -top-10 -left-2 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                  “
-                </span>
-                <blockquote className="font-['urbanist'] font-medium italic text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/95 relative z-10">
-                  "We select Guntur's finest chilli pods directly from farms we trust, grading every batch by hand to guarantee perfect SHU levels, color retention, and moisture compliance."
+              <div className="relative lg:pr-8 xl:pr-12 lg:col-span-5 w-full z-10 text-left space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-7 bg-[#cca72f]" />
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-[#cca72f]">
+                    Our Promise
+                  </p>
+                </div>
+                <blockquote className="font-['urbanist'] font-semibold text-[16px] md:text-[18px] leading-relaxed text-white/95">
+                  We choose the best chilli pods from farms we trust, grading every batch by hand to make sure they arrive fresh, hot, and full of color.
                 </blockquote>
-                <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-[#cca72f] relative z-10">
+                <div className="font-['urbanist'] font-bold text-[9px] sm:text-[10px] tracking-widest uppercase text-white/50">
                   — The Minha Sourcing Team
                 </div>
-                <span className="absolute -bottom-14 right-4 text-white/10 text-8xl font-serif select-none pointer-events-none hidden lg:inline-block">
-                  ”
-                </span>
               </div>
 
               {/* Right Column: CTA Content (lg:col-span-7) */}
               <div className="space-y-5 text-center lg:text-left lg:col-span-7 w-full">
-                {/* Tagline Badge */}
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-[#cca72f] font-['urbanist'] font-bold text-[8.5px] sm:text-[9px] tracking-widest uppercase mx-auto lg:mx-0">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#cca72f] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#cca72f]"></span>
-                  </span>
-                  Bulk Procurement
-                </div>
 
                 <h2 className="font-['urbanist'] font-bold text-[22px] sm:text-[26px] md:text-[30px] leading-[1.25] text-white tracking-tight">
-                  Need Bulk Chilli Supply for <br className="hidden sm:inline" /> Export or Processing?
+                  Looking for a reliable bulk chilli supplier?
                 </h2>
 
                 <p className="font-['Nunito'] font-semibold text-[13.5px] leading-relaxed text-white/80">
-                  Partner with India’s premier chilli export desk. Request specialized quotes, certificate reports, and booking timelines for your trade volume.
+                  We are one of India's trusted chilli exporters. Contact us today to get customized price quotes, lab certificates, and booking schedules.
                 </p>
 
-                {/* Checkmark trade highlights / Glass Chips */}
-                <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start pt-1">
+                {/* Highlights */}
+                <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center lg:justify-start pt-1">
                   {[
-                    "100% Pure & Tested",
-                    "ASTA Compliant Quality",
+                    "100% Tested Quality",
+                    "International Standards",
                     "Custom Packing Formats"
                   ].map((text, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 bg-white/5 border border-white/5 backdrop-blur-[2px] rounded-full px-3.5 py-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#cca72f] shrink-0" />
-                      <span className="font-['urbanist'] font-bold text-[8.5px] sm:text-[9px] text-white/90 uppercase tracking-wider">
+                    <div key={idx} className="flex items-center gap-2">
+                      <FiCheck className="text-[#cca72f] text-sm shrink-0" />
+                      <span className="font-['urbanist'] font-bold text-[11px] text-white/90 uppercase tracking-wider">
                         {text}
                       </span>
                     </div>
@@ -610,23 +758,23 @@ const Varieties = () => {
                 </div>
 
                 {/* Buttons Group */}
-                <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 relative z-10 pt-2">
+                <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3.5 relative z-10 pt-2">
                   <a
                     href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20would%20like%20to%20send%20a%20bulk%20enquiry%20for%20your%20Guntur%20dry%20red%20chillies.%20Please%20share%20product%20grades%2C%20pricing%2C%20and%20MOQ%20details."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#8f000d] to-[#b22222] hover:shadow-[0_6px_20px_-2px_rgba(143,0,13,0.3)] text-white font-['urbanist'] font-bold text-[11px] sm:text-[11.5px] py-[12px] px-[22px] rounded-full shadow-lg shadow-[#8f000d]/20 hover:translate-y-[-2px] active:scale-98 transition-all duration-300 uppercase tracking-wider text-center group whitespace-nowrap cursor-pointer"
+                    className="group inline-flex items-center justify-center gap-2 bg-[#8f000d] hover:bg-[#a3000f] text-white font-['urbanist'] font-bold text-[13px] py-4 px-8 rounded-lg uppercase tracking-wider shadow-lg shadow-[#8f000d]/30 transition-colors duration-300 whitespace-nowrap cursor-pointer text-center"
                   >
                     Send Enquiry
-                    <FiArrowRight className="text-xs transition-transform group-hover:translate-x-1 duration-300" />
+                    <FiArrowRight className="text-[17px] transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                   <a
                     href="https://wa.me/919985728555?text=Hi%20Minha%20Imports%20%26%20Exports%2C%20I%20am%20interested%20in%20your%20chilli%20varieties%20and%20would%20like%20to%20discuss%20pricing%2C%20certifications%2C%20and%20export%20availability."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-['urbanist'] font-bold text-[11px] sm:text-[11.5px] py-[12px] px-[22px] rounded-full shadow-md active:scale-98 transition-all duration-300 uppercase tracking-wider text-center whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-['urbanist'] font-bold text-[13px] py-4 px-8 rounded-lg uppercase tracking-wider hover:bg-white hover:text-[#8f000d] hover:border-white transition-colors duration-300 whitespace-nowrap cursor-pointer text-center"
                   >
-                    <FiMail className="text-sm shrink-0" />
+                    <FiMail className="text-base shrink-0" />
                     Contact Us
                   </a>
                 </div>
