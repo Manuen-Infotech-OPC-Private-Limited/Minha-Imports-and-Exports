@@ -129,7 +129,7 @@ const Varieties = () => {
       <SEO
         title="Guntur Dry Red Chilli Varieties | Minha Imports & Exports"
         description="Explore premium Guntur Dry Red Chilli varieties — Teja S17, S4/334, S10, Byadgi. Bulk Chilli Exporter India with APEDA certification. Custom grades for global spice industries."
-        keywords="Guntur Dry Red Chilli Varieties, Teja S17 Chilli, S4 334 Chilli, Byadgi Chilli, Bulk Chilli Supplier India, Chilli Exporter India"
+        keywords="Guntur Dry Red Chilli Varieties, dry red chilli Teja S17 Chilli, S4 334 Chilli, Byadgi Chilli, Bulk Chilli Supplier India, Chilli Exporter India"
         url="/varieties"
         schemas={[breadcrumb]}
       />
