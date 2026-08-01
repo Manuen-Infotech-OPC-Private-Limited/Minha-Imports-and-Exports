@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const BASE_URL = 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports';
+const BASE_URL = 'https://www.minhaimportsandexports.com';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 const SITE_NAME = 'Minha Imports & Exports';
 
@@ -29,7 +29,21 @@ const GLOBAL_SCHEMAS = [
       email: 'minhaimportsexports@gmail.com',
       availableLanguage: ['English', 'Telugu', 'Hindi'],
     },
-    sameAs: [],
+
+    areaServed: [
+  "India",
+  "United States",
+  "United Arab Emirates",
+  "Saudi Arabia",
+  "Malaysia",
+  "Singapore",
+  "United Kingdom"
+],
+    sameAs: [
+  "https://www.linkedin.com/company/minha-imports-and-exports",
+  "https://www.facebook.com/DryRedChilliesExporter/",
+  "https://www.instagram.com/dry_chilli_exporters/"
+],
   },
   {
     '@context': 'https://schema.org',

@@ -147,14 +147,14 @@ const Contact = () => {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/' },
-              { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/contact' },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.minhaimportsandexports.com/contact' },
             ],
           },
           {
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
-            url: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/contact',
+            url: 'https://www.minhaimportsandexports.com/contact',
             name: 'Contact Minha Imports & Exports',
             description: 'Send a bulk export inquiry or business partnership request to Minha Imports & Exports.',
           },

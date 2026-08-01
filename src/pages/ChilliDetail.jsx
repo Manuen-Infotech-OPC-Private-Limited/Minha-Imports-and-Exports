@@ -114,9 +114,9 @@ const ChilliDetail = () => {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/' },
-              { '@type': 'ListItem', position: 2, name: 'Chilli Varieties', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/varieties' },
-              { '@type': 'ListItem', position: 3, name: chilli.name, item: `https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/varieties/${chilli.id}` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Chilli Varieties', item: 'https://www.minhaimportsandexports.com/varieties' },
+              { '@type': 'ListItem', position: 3, name: chilli.name, item: `https://www.minhaimportsandexports.com/varieties/${chilli.id}` },
             ],
           },
           {

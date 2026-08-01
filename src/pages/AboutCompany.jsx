@@ -261,8 +261,8 @@ const AboutCompany = () => {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/' },
-            { '@type': 'ListItem', position: 2, name: 'Our Company', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/about' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Our Company', item: 'https://www.minhaimportsandexports.com/about' },
           ],
         }]}
       />

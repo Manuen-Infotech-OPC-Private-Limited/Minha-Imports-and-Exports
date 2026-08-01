@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/sitemap.xml
+Sitemap: https://www.minhaimportsandexports.com/sitemap.xml

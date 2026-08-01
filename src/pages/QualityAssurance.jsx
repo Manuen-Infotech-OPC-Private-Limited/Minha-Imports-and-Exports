@@ -100,8 +100,8 @@ const QualityAssurance = () => {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/' },
-            { '@type': 'ListItem', position: 2, name: 'Quality Assurance', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/quality' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Quality Assurance', item: 'https://www.minhaimportsandexports.com/quality' },
           ],
         }]}
       />

@@ -33,23 +33,22 @@ const ChilliPowder = () => {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/' },
-            { '@type': 'ListItem', position: 2, name: 'Chilli Powder', item: 'https://shravyavenishetty-manuen.github.io/Minha_Imports_and_Exports/powder' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Chilli Powder', item: 'https://www.minhaimportsandexports.com/powder' },
           ],
         }, {
           '@context': 'https://schema.org',
           '@type': 'Product',
           name: 'Premium Guntur Chilli Powder',
           description: 'Export-grade Guntur chilli powder, cold-ground for maximum color and pungency retention. Available in custom SHU & ASTA grades.',
+          image: "https://www.minhaimportsandexports.com/assets/powder-hero-Dl03BU7f.png",
           brand: { '@type': 'Brand', name: 'Minha Imports & Exports' },
+          manufacturer: {
+            '@type': 'Organization',
+             name: 'Minha Imports & Exports'
+          },
           category: 'Spices & Seasonings',
           countryOfOrigin: 'IN',
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-            priceCurrency: 'USD',
-            seller: { '@type': 'Organization', name: 'Minha Imports & Exports' },
-          },
         }]}
       />
 
