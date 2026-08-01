@@ -255,7 +255,7 @@ const AboutCompany = () => {
       <SEO
         title="About Us | Minha Imports & Exports"
         description="Learn about Minha Imports & Exports — Guntur's leading dry red chilli and spice exporter and domestic supplier. FSSAI, APEDA & ISO certified. Direct farm-to-port supply chain since 2013."
-        keywords="Minha Imports Exports, About Minha, Guntur Chilli Exporter, Indian Spice Company, Chilli Exporter India, APEDA certified exporter"
+        keywords="Minha Imports Exports, chilli exporter india, About Minha, Guntur Chilli Exporter, Indian Spice Company, Chilli Exporter India, APEDA certified exporter"
         url="/about"
         schemas={[{
           '@context': 'https://schema.org',

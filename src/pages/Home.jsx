@@ -17,7 +17,7 @@ const Home = () => {
       <SEO
         title="Guntur Dry Red Chilli Exporter | Minha Imports & Exports"
         description="India's trusted Guntur Dry Red Chilli and Chilli Powder exporter. Bulk Indian Chilli Supplier for spice industries worldwide. FSSAI, APEDA & ISO certified."
-        keywords="Guntur Dry Red Chillies, Chilli Exporter India, Chilli Powder Exporter, Indian Chilli Supplier, Bulk Chilli Supplier, dry red chilli export India"
+        keywords="Guntur Dry Red Chillies,  dry red chilli exporter, guntur red chilli exporter,Chilli Exporter India, Chilli Powder Exporter, Indian Chilli Supplier, Bulk Chilli Supplier, indian spice exporter, dry red chilli export India"
         url="/"
       />
       <Hero />
