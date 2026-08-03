@@ -104,88 +104,66 @@ const ChilliDetail = () => {
   return (
     <div className="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen relative overflow-hidden">
       <SEO
-        title={`${chilli.name} — Export Grade | Minha Imports & Exports`}
-        description={`Buy ${chilli.name} in bulk from India's top chilli exporter. ${chilli.description} Heat: ${chilli.heatLevel}. Color: ${chilli.colorValue} ASTA. FSSAI & APEDA certified.`}
-        keywords={`${chilli.name}, Guntur Dry Red Chilli, ${chilli.category}, Chilli Exporter India, Bulk Chilli Supplier, ${chilli.grade} grade chilli`}
+        title={`${chilli.name} | Export Quality Dry Red Chilli | Minha Imports & Exports`}
+        description={`Buy ${chilli.name} in bulk from India's trusted chilli exporter. ${chilli.description} Heat Level: ${chilli.heatLevel}. ASTA Color: ${chilli.colorValue}. APEDA & FSSAI Certified.`}
+        keywords={`${chilli.name}, Dry Red Chilli Exporter, Guntur Chilli, Bulk Chilli Supplier, Indian Red Chilli Export, ${chilli.grade}`}
         url={`/varieties/${chilli.id}`}
         image={chilli.image}
         schemas={[
           {
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
             itemListElement: [
               {
-                '@type': 'ListItem',
+                "@type": "ListItem",
                 position: 1,
-                name: 'Home',
-                item: 'https://www.minhaimportsandexports.com/',
+                name: "Home",
+                item: "https://www.minhaimportsandexports.com/"
               },
               {
-                '@type': 'ListItem',
+                "@type": "ListItem",
                 position: 2,
-                name: 'Chilli Varieties',
-                item: 'https://www.minhaimportsandexports.com/varieties',
+                name: "Chilli Varieties",
+                item: "https://www.minhaimportsandexports.com/varieties"
               },
               {
-                '@type': 'ListItem',
+                "@type": "ListItem",
                 position: 3,
                 name: chilli.name,
-                item: `https://www.minhaimportsandexports.com/varieties/${chilli.id}`,
-              },
-            ],
+                item: `https://www.minhaimportsandexports.com/varieties/${chilli.id}`
+              }
+            ]
           },
           {
-            '@context': 'https://schema.org',
-            '@type': 'Product',
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": `https://www.minhaimportsandexports.com/varieties/${chilli.id}`,
+            url: `https://www.minhaimportsandexports.com/varieties/${chilli.id}`,
             name: chilli.name,
             description: chilli.description,
-            image: chilli.image,
-
-            brand: {
-              '@type': 'Brand',
-              name: 'Minha Imports & Exports',
+            inLanguage: "en",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Minha Imports & Exports",
+              url: "https://www.minhaimportsandexports.com/"
             },
-
-            manufacturer: {
-              '@type': 'Organization',
-              name: 'Minha Imports & Exports',
+            primaryImageOfPage: {
+              "@type": "ImageObject",
+              url: chilli.image
             },
-
-            category: 'Spices & Seasonings',
-
-            countryOfOrigin: {
-              '@type': 'Country',
-              name: 'IN',
-            },
-
-            additionalProperty: [
-              {
-                '@type': 'PropertyValue',
-                name: 'Heat Level',
-                value: chilli.heatLevel,
-              },
-              {
-                '@type': 'PropertyValue',
-                name: 'ASTA Color Value',
-                value: chilli.colorValue,
-              },
-              {
-                '@type': 'PropertyValue',
-                name: 'Moisture',
-                value: chilli.moisture,
-              },
-              {
-                '@type': 'PropertyValue',
-                name: 'Grade',
-                value: chilli.grade,
-              },
-              {
-                '@type': 'PropertyValue',
-                name: 'Stem Type',
-                value: chilli.stemType,
-              },
-            ],
+            about: {
+              "@type": "Thing",
+              name: chilli.name,
+              description: chilli.description
+            }
           },
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Minha Imports & Exports",
+            url: "https://www.minhaimportsandexports.com",
+            logo: "https://www.minhaimportsandexports.com/assets/logo-minha-dark-BRjjan-j.png"
+          }
         ]}
       />
 
