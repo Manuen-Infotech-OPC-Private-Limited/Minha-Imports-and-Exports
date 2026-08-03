@@ -114,9 +114,24 @@ const ChilliDetail = () => {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Chilli Varieties', item: 'https://www.minhaimportsandexports.com/varieties' },
-              { '@type': 'ListItem', position: 3, name: chilli.name, item: `https://www.minhaimportsandexports.com/varieties/${chilli.id}` },
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.minhaimportsandexports.com/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Chilli Varieties',
+                item: 'https://www.minhaimportsandexports.com/varieties',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: chilli.name,
+                item: `https://www.minhaimportsandexports.com/varieties/${chilli.id}`,
+              },
             ],
           },
           {
@@ -125,22 +140,51 @@ const ChilliDetail = () => {
             name: chilli.name,
             description: chilli.description,
             image: chilli.image,
-            brand: { '@type': 'Brand', name: 'Minha Imports & Exports' },
-            category: 'Spices & Seasonings',
-            countryOfOrigin: 'IN',
-            additionalProperty: [
-              { '@type': 'PropertyValue', name: 'Heat Level', value: chilli.heatLevel },
-              { '@type': 'PropertyValue', name: 'ASTA Color Value', value: chilli.colorValue },
-              { '@type': 'PropertyValue', name: 'Moisture', value: chilli.moisture },
-              { '@type': 'PropertyValue', name: 'Grade', value: chilli.grade },
-              { '@type': 'PropertyValue', name: 'Stem Type', value: chilli.stemType },
-            ],
-            offers: {
-              '@type': 'Offer',
-              availability: 'https://schema.org/InStock',
-              priceCurrency: 'USD',
-              seller: { '@type': 'Organization', name: 'Minha Imports & Exports' },
+
+            brand: {
+              '@type': 'Brand',
+              name: 'Minha Imports & Exports',
             },
+
+            manufacturer: {
+              '@type': 'Organization',
+              name: 'Minha Imports & Exports',
+            },
+
+            category: 'Spices & Seasonings',
+
+            countryOfOrigin: {
+              '@type': 'Country',
+              name: 'IN',
+            },
+
+            additionalProperty: [
+              {
+                '@type': 'PropertyValue',
+                name: 'Heat Level',
+                value: chilli.heatLevel,
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'ASTA Color Value',
+                value: chilli.colorValue,
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Moisture',
+                value: chilli.moisture,
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Grade',
+                value: chilli.grade,
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Stem Type',
+                value: chilli.stemType,
+              },
+            ],
           },
         ]}
       />
