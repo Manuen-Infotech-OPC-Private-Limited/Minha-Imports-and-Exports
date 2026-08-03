@@ -29,27 +29,33 @@ const ChilliPowder = () => {
         description="Bulk Chilli Powder Exporter from India. Custom SHU & ASTA grades, pesticide-free cold-ground chilli powder. Trusted Indian Chilli Supplier with FSSAI & APEDA certification."
         keywords="Chilli Powder Exporter India, Bulk Chilli Powder Supplier, Guntur Chilli Powder, Custom ASTA Grade Chilli Powder, Indian Chilli Powder Export"
         url="/powder"
-        schemas={[{
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.minhaimportsandexports.com/' },
-            { '@type': 'ListItem', position: 2, name: 'Chilli Powder', item: 'https://www.minhaimportsandexports.com/powder' },
-          ],
-        }, {
-          '@context': 'https://schema.org',
-          '@type': 'Product',
-          name: 'Premium Guntur Chilli Powder',
-          description: 'Export-grade Guntur chilli powder, cold-ground for maximum color and pungency retention. Available in custom SHU & ASTA grades.',
-          image: "https://www.minhaimportsandexports.com/assets/powder-hero-Dl03BU7f.png",
-          brand: { '@type': 'Brand', name: 'Minha Imports & Exports' },
-          manufacturer: {
-            '@type': 'Organization',
-             name: 'Minha Imports & Exports'
+        schemas={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.minhaimportsandexports.com/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Chilli Powder',
+                item: 'https://www.minhaimportsandexports.com/powder'
+              }
+            ]
           },
-          category: 'Spices & Seasonings',
-          countryOfOrigin: 'IN',
-        }]}
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Minha Imports & Exports',
+            url: 'https://www.minhaimportsandexports.com',
+            logo: 'https://www.minhaimportsandexports.com/assets/logo-minha-dark-BRjjan-j.png'
+          }
+        ]}
       />
 
       {/* 1. Hero Section */}
@@ -537,7 +543,7 @@ const ChilliPowder = () => {
                   Partner with a trusted export leader. Get a customized quote for your specific grade and volume requirements today.
                 </p>
 
-                 {/* Feature Chips */}
+                {/* Feature Chips */}
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 justify-center lg:justify-start">
                   {[
                     "Low-Temp Cold Grinding",
