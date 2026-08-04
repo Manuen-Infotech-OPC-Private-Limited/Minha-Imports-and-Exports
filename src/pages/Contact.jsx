@@ -72,6 +72,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Format pre-filled WhatsApp message
+    const messageText = `*New Export Inquiry - Minha Imports & Exports*
+
+👤 *Name:* ${formData.name}
+🏢 *Company:* ${formData.company || 'N/A'}
+🌍 *Country:* ${formData.country}
+📧 *Email:* ${formData.email}
+📞 *Phone:* ${formData.phone}
+📌 *Requirement:* ${formData.reqType}
+
+💬 *Message:*
+${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/919985728555?text=${encodeURIComponent(messageText)}`;
+
+    // Open WhatsApp in a new window/tab
+    window.open(whatsappUrl, '_blank');
+
+    // Trigger 3D card flip confirmation
     setSubmitted(true);
     setIsFlipped(true);
     setTimeout(() => {
