@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiPackage } from 'react-icons/fi';
 import heroSackImg from '../../assets/hero-1-sack.jpg';
 import heroChilliesImg from '../../assets/hero-2-chillies.jpg';
 
@@ -11,6 +11,7 @@ const manifest = [
   { label: 'Varieties', value: 'Teja · Sannam · Byadgi' },
   { label: 'Certified', value: 'FSSAI · APEDA · ISO' },
   { label: 'Exports', value: '15+ countries' },
+  { label: 'Domestic Market', value: 'Pan-India · From 1 Ton' },
 ];
 
 const bgImages = [heroSackImg, heroChilliesImg];
@@ -133,6 +134,22 @@ const Hero = () => {
         </motion.div>
       </div>
 
+      {/* Floating domestic-market badges — bottom-right editorial overlay */}
+      <motion.div
+        initial={{ opacity: 0, y: reduce ? 0 : 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute z-20 bottom-40 right-6 md:right-10 lg:right-12 flex flex-col items-end gap-2"
+      >
+        <span className="inline-flex items-center gap-2.5 bg-[#cca72f]/25 border border-[#cca72f]/70 text-[#f5d76e] font-['urbanist'] font-extrabold text-[13px] sm:text-[14px] tracking-wider uppercase px-5 py-2.5 rounded-full backdrop-blur-md shadow-[0_0_18px_2px_rgba(204,167,47,0.35)]">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#cca72f] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#f5d76e]" />
+          </span>
+          Domestic Supply · From 1 Ton
+        </span>
+      </motion.div>
+
       {/* Signature: export manifest bar */}
       <motion.div
         variants={item}
@@ -141,7 +158,7 @@ const Hero = () => {
         className="relative z-20 border-t border-white/15"
       >
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12 py-5">
-          <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+          <dl className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-4">
             {manifest.map((m) => (
               <div key={m.label} className="flex flex-col gap-1">
                 <dt className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#cca72f]">
